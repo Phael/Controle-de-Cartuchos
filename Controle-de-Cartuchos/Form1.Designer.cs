@@ -31,14 +31,14 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox_Identificacao = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao8 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao7 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao6 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao5 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao4 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao3 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao2 = new System.Windows.Forms.TextBox();
+            this.textBox_Identificacao1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox_Observacao = new System.Windows.Forms.TextBox();
@@ -108,7 +108,7 @@
             this.comboBox_Servico1 = new System.Windows.Forms.ComboBox();
             this.comboBox_Produto1 = new System.Windows.Forms.ComboBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker_Data = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label_Os = new System.Windows.Forms.Label();
             this.textBox_Telefone = new System.Windows.Forms.TextBox();
@@ -144,14 +144,14 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.textBox_Nome);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox4);
-            this.groupBox2.Controls.Add(this.textBox5);
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox7);
-            this.groupBox2.Controls.Add(this.textBox_Identificacao);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao8);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao7);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao6);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao5);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao4);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao3);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao2);
+            this.groupBox2.Controls.Add(this.textBox_Identificacao1);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Controls.Add(this.textBox_Observacao);
@@ -232,61 +232,61 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CADASTRO";
             // 
-            // textBox1
+            // textBox_Identificacao8
             // 
-            this.textBox1.Location = new System.Drawing.Point(195, 429);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(68, 20);
-            this.textBox1.TabIndex = 86;
+            this.textBox_Identificacao8.Location = new System.Drawing.Point(195, 429);
+            this.textBox_Identificacao8.Name = "textBox_Identificacao8";
+            this.textBox_Identificacao8.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao8.TabIndex = 86;
             // 
-            // textBox2
+            // textBox_Identificacao7
             // 
-            this.textBox2.Location = new System.Drawing.Point(195, 400);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(68, 20);
-            this.textBox2.TabIndex = 85;
+            this.textBox_Identificacao7.Location = new System.Drawing.Point(195, 400);
+            this.textBox_Identificacao7.Name = "textBox_Identificacao7";
+            this.textBox_Identificacao7.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao7.TabIndex = 85;
             // 
-            // textBox3
+            // textBox_Identificacao6
             // 
-            this.textBox3.Location = new System.Drawing.Point(195, 371);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(68, 20);
-            this.textBox3.TabIndex = 84;
+            this.textBox_Identificacao6.Location = new System.Drawing.Point(195, 371);
+            this.textBox_Identificacao6.Name = "textBox_Identificacao6";
+            this.textBox_Identificacao6.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao6.TabIndex = 84;
             // 
-            // textBox4
+            // textBox_Identificacao5
             // 
-            this.textBox4.Location = new System.Drawing.Point(195, 342);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(68, 20);
-            this.textBox4.TabIndex = 83;
+            this.textBox_Identificacao5.Location = new System.Drawing.Point(195, 342);
+            this.textBox_Identificacao5.Name = "textBox_Identificacao5";
+            this.textBox_Identificacao5.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao5.TabIndex = 83;
             // 
-            // textBox5
+            // textBox_Identificacao4
             // 
-            this.textBox5.Location = new System.Drawing.Point(195, 312);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(68, 20);
-            this.textBox5.TabIndex = 82;
+            this.textBox_Identificacao4.Location = new System.Drawing.Point(195, 312);
+            this.textBox_Identificacao4.Name = "textBox_Identificacao4";
+            this.textBox_Identificacao4.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao4.TabIndex = 82;
             // 
-            // textBox6
+            // textBox_Identificacao3
             // 
-            this.textBox6.Location = new System.Drawing.Point(195, 283);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(68, 20);
-            this.textBox6.TabIndex = 81;
+            this.textBox_Identificacao3.Location = new System.Drawing.Point(195, 283);
+            this.textBox_Identificacao3.Name = "textBox_Identificacao3";
+            this.textBox_Identificacao3.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao3.TabIndex = 81;
             // 
-            // textBox7
+            // textBox_Identificacao2
             // 
-            this.textBox7.Location = new System.Drawing.Point(195, 252);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(68, 20);
-            this.textBox7.TabIndex = 80;
+            this.textBox_Identificacao2.Location = new System.Drawing.Point(195, 252);
+            this.textBox_Identificacao2.Name = "textBox_Identificacao2";
+            this.textBox_Identificacao2.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao2.TabIndex = 80;
             // 
-            // textBox_Identificacao
+            // textBox_Identificacao1
             // 
-            this.textBox_Identificacao.Location = new System.Drawing.Point(195, 222);
-            this.textBox_Identificacao.Name = "textBox_Identificacao";
-            this.textBox_Identificacao.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Identificacao.TabIndex = 79;
+            this.textBox_Identificacao1.Location = new System.Drawing.Point(195, 222);
+            this.textBox_Identificacao1.Name = "textBox_Identificacao1";
+            this.textBox_Identificacao1.Size = new System.Drawing.Size(68, 20);
+            this.textBox_Identificacao1.TabIndex = 79;
             // 
             // label3
             // 
@@ -886,7 +886,7 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.dateTimePicker_Data);
             this.groupBox4.Location = new System.Drawing.Point(400, 24);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(154, 73);
@@ -894,13 +894,13 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "DATA";
             // 
-            // dateTimePicker1
+            // dateTimePicker_Data
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(32, 28);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(100, 20);
-            this.dateTimePicker1.TabIndex = 77;
+            this.dateTimePicker_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_Data.Location = new System.Drawing.Point(32, 28);
+            this.dateTimePicker_Data.Name = "dateTimePicker_Data";
+            this.dateTimePicker_Data.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker_Data.TabIndex = 77;
             // 
             // groupBox3
             // 
@@ -1053,15 +1053,15 @@
         private System.Windows.Forms.Button button_Processar;
         private System.Windows.Forms.Label label_Os;
         private System.Windows.Forms.TextBox textBox_Observacao;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox_Identificacao;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Data;
+        private System.Windows.Forms.TextBox textBox_Identificacao8;
+        private System.Windows.Forms.TextBox textBox_Identificacao7;
+        private System.Windows.Forms.TextBox textBox_Identificacao6;
+        private System.Windows.Forms.TextBox textBox_Identificacao5;
+        private System.Windows.Forms.TextBox textBox_Identificacao4;
+        private System.Windows.Forms.TextBox textBox_Identificacao3;
+        private System.Windows.Forms.TextBox textBox_Identificacao2;
+        private System.Windows.Forms.TextBox textBox_Identificacao1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DataGridView dataGridView_Cartuchos;
