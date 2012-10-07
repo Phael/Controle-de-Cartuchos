@@ -20,7 +20,7 @@ namespace Controle_de_Cartuchos
         {
             InitializeComponent();
         }
-        public void IniciaAcesso()
+        public void BancoDeDados()
         {
             Conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb");
             Ds = new DataSet();
@@ -45,7 +45,7 @@ namespace Controle_de_Cartuchos
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            IniciaAcesso();
+            BancoDeDados();
         }
         
         private void button_Processar_Click(object sender, EventArgs e)
@@ -132,6 +132,7 @@ namespace Controle_de_Cartuchos
             string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
             string Insert = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "')";
 
+
             //cria a conexão com o banco de dados
             OleDbConnection dbConnection = new OleDbConnection(Conexao);
 
@@ -143,8 +144,7 @@ namespace Controle_de_Cartuchos
                 dbConnection.Open();
                 // executa a query
                 cmdQry.ExecuteNonQuery();
-                //
-                MessageBox.Show("Dados Salvos com sucesso.");
+                BancoDeDados();
             }
             //Trata a exceção
             catch (OleDbException ex)
