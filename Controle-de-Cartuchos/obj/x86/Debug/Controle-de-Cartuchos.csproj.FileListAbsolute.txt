@@ -17,3 +17,13 @@ I:\PJS\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResourc
 I:\PJS\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
 I:\PJS\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe
 I:\PJS\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.pdb
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.exe
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.pdb
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.pdb
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\ResolveAssemblyReference.cache
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
+D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources

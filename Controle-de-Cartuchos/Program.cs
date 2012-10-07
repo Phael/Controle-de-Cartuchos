@@ -15,7 +15,7 @@ namespace Controle_de_Cartuchos
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form_Principal());
         }
     }
 }
