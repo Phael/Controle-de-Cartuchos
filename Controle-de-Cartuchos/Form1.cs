@@ -12,9 +12,7 @@ namespace Controle_de_Cartuchos
 {
     public partial class Form_Principal : Form
     {
-        private OleDbConnection Conn;
-        private OleDbDataAdapter Da;
-        private DataSet Ds;
+        string CaminhoBancoDados = "D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
 
         public Form_Principal()
         {
@@ -22,24 +20,37 @@ namespace Controle_de_Cartuchos
         }
         public void BancoDeDados()
         {
-            Conn = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb");
-            Ds = new DataSet();
+            
+
+            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados);
+            DataSet Ds = new DataSet();
+
+            DataSet Ds2 = new DataSet();
 
             try
             {
-                Conn.Open();
+                Conexao.Open();
             }
             catch (System.Exception e)
             {
                 MessageBox.Show(e.Message.ToString());
             }
 
-            if (Conn.State == ConnectionState.Open)
+            if (Conexao.State == ConnectionState.Open)
             {
-                Da = new OleDbDataAdapter("SELECT OS,Nome,Data FROM Cartuchos", Conn);
-                Da.Fill(Ds, "Cartuchos");
+                OleDbDataAdapter Historico = new OleDbDataAdapter("SELECT * FROM Cartuchos", Conexao);
+
+                Historico.Fill(Ds, "Cartuchos");
+
                 dataGridView_Cartuchos.DataSource = Ds;
                 dataGridView_Cartuchos.DataMember = "Cartuchos";
+
+                OleDbDataAdapter Historico2 = new OleDbDataAdapter("SELECT Código, Nome, Data FROM Cartuchos", Conexao);
+
+                Historico.Fill(Ds2, "Cartuchos");
+
+                dataGridView_Apresenta.DataSource = Ds2;
+                dataGridView_Apresenta.DataMember = "Cartuchos";
             }
         }
 
@@ -107,14 +118,14 @@ namespace Controle_de_Cartuchos
             string Resultado7 = textBox_Resultado7.Text;
             string Resultado8 = textBox_Resultado8.Text;
 
-            float Valor1 = float.Parse(textBox_Valor1.Text);
-            float Valor2 = float.Parse(textBox_Valor2.Text);
-            float Valor3 = float.Parse(textBox_Valor3.Text);
-            float Valor4 = float.Parse(textBox_Valor4.Text);
-            float Valor5 = float.Parse(textBox_Valor5.Text);
-            float Valor6 = float.Parse(textBox_Valor6.Text);
-            float Valor7 = float.Parse(textBox_Valor7.Text);
-            float Valor8 = float.Parse(textBox_Valor8.Text);
+            string Valor1 = textBox_Valor1.Text;
+            string Valor2 = textBox_Valor2.Text;
+            string Valor3 = textBox_Valor3.Text;
+            string Valor4 = textBox_Valor4.Text;
+            string Valor5 = textBox_Valor5.Text;
+            string Valor6 = textBox_Valor6.Text;
+            string Valor7 = textBox_Valor7.Text;
+            string Valor8 = textBox_Valor8.Text;
 
             string Baia1 = textBox_Baia1.Text;
             string Baia2 = textBox_Baia2.Text;
@@ -129,34 +140,185 @@ namespace Controle_de_Cartuchos
 
             string Data = dateTimePicker_Data.Value.ToShortDateString();
 
-            string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
-            string Insert = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "')";
+            string ValorTotal = label_Valor_Total.Text;/*float.Parse(Valor1) + float.Parse(Valor2) + float.Parse(Valor3) + float.Parse(Valor4) + float.Parse(Valor5) + float.Parse(Valor6) + float.Parse(Valor7) + float.Parse(Valor8);*/
 
+            //label_Valor_Total.Text = Convert.ToString(ValorTotal);
 
-            //cria a conexão com o banco de dados
-            OleDbConnection dbConnection = new OleDbConnection(Conexao);
-
-            //Cria o comando que inicia a query
-            OleDbCommand cmdQry = new OleDbCommand(Insert, dbConnection);
-            try
+            //string ValorTotalBd = Convert.ToString(ValorTotal);
+            if (button_Processar.Text == "PROCESSAR")
             {
-                // abre o banco
-                dbConnection.Open();
-                // executa a query
-                cmdQry.ExecuteNonQuery();
-                BancoDeDados();
+                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados;
+                string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "')";
+
+
+                //cria a conexão com o banco de dados
+                OleDbConnection ConexaoBD = new OleDbConnection(Conexao);
+
+                //Cria o comando que inicia a query
+                OleDbCommand cmdInserir = new OleDbCommand(Inserir, ConexaoBD);
+                try
+                {
+                    // abre o banco
+                    ConexaoBD.Open();
+                    // executa a query
+                    cmdInserir.ExecuteNonQuery();
+                
+                }
+                //Trata a exceção
+                catch (OleDbException Erro)
+                {
+                    MessageBox.Show("Error: " + Erro.Message);
+                }
+                finally
+                {
+                    //fecha a conexao
+                    ConexaoBD.Close();
+                    BancoDeDados();
+                }
             }
-            //Trata a exceção
-            catch (OleDbException ex)
+            else
             {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                //fecha a conexao
-                dbConnection.Close();
+                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados;
+
+                string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data = '" + Data + "'" ;
+
+                //cria a conexão com o banco de dados
+                OleDbConnection ConexaoBD = new OleDbConnection(Conexao);
+
+                //Cria o comando que inicia a query
+                OleDbCommand cmdEditar = new OleDbCommand(Editar, ConexaoBD);
+
+                try
+                {
+                    ConexaoBD.Open();
+                    cmdEditar.ExecuteNonQuery();
+                }
+                catch (OleDbException ex)
+                {
+                    MessageBox.Show("Error : " + ex.Message);
+                }
+                finally
+                {
+                    ConexaoBD.Close();
+                    BancoDeDados();
+                    button_Processar.Text = "PROCESSAR";
+                }
             }
         }
+
+        private void dataGridView_Cartuchos_Click(object sender, DataGridViewCellEventArgs e)
+        {
+            int LinhaAtual = int.Parse(e.RowIndex.ToString());
+
+            if (LinhaAtual >= 0)
+            {
+                label_Os.Text = dataGridView_Cartuchos[0, LinhaAtual].Value.ToString();
+                textBox_Nome.Text = dataGridView_Cartuchos[1, LinhaAtual].Value.ToString();
+                textBox_Telefone.Text = dataGridView_Cartuchos[2, LinhaAtual].Value.ToString();
+
+                comboBox_Produto1.Text = dataGridView_Cartuchos[3, LinhaAtual].Value.ToString();
+                comboBox_Produto2.Text = dataGridView_Cartuchos[4, LinhaAtual].Value.ToString();
+                comboBox_Produto3.Text = dataGridView_Cartuchos[5, LinhaAtual].Value.ToString();
+                comboBox_Produto4.Text = dataGridView_Cartuchos[6, LinhaAtual].Value.ToString();
+                comboBox_Produto5.Text = dataGridView_Cartuchos[7, LinhaAtual].Value.ToString();
+                comboBox_Produto6.Text = dataGridView_Cartuchos[8, LinhaAtual].Value.ToString();
+                comboBox_Produto7.Text = dataGridView_Cartuchos[9, LinhaAtual].Value.ToString();
+                comboBox_Produto8.Text = dataGridView_Cartuchos[10, LinhaAtual].Value.ToString();
+
+                comboBox_Servico1.Text = dataGridView_Cartuchos[11, LinhaAtual].Value.ToString();
+                comboBox_Servico2.Text = dataGridView_Cartuchos[12, LinhaAtual].Value.ToString();
+                comboBox_Servico3.Text = dataGridView_Cartuchos[13, LinhaAtual].Value.ToString();
+                comboBox_Servico4.Text = dataGridView_Cartuchos[14, LinhaAtual].Value.ToString();
+                comboBox_Servico5.Text = dataGridView_Cartuchos[15, LinhaAtual].Value.ToString();
+                comboBox_Servico6.Text = dataGridView_Cartuchos[16, LinhaAtual].Value.ToString();
+                comboBox_Servico7.Text = dataGridView_Cartuchos[17, LinhaAtual].Value.ToString();
+                comboBox_Servico8.Text = dataGridView_Cartuchos[18, LinhaAtual].Value.ToString();
+
+                textBox_Identificacao1.Text = dataGridView_Cartuchos[19, LinhaAtual].Value.ToString();
+                textBox_Identificacao2.Text = dataGridView_Cartuchos[20, LinhaAtual].Value.ToString();
+                textBox_Identificacao3.Text = dataGridView_Cartuchos[21, LinhaAtual].Value.ToString();
+                textBox_Identificacao4.Text = dataGridView_Cartuchos[22, LinhaAtual].Value.ToString();
+                textBox_Identificacao5.Text = dataGridView_Cartuchos[23, LinhaAtual].Value.ToString();
+                textBox_Identificacao6.Text = dataGridView_Cartuchos[24, LinhaAtual].Value.ToString();
+                textBox_Identificacao7.Text = dataGridView_Cartuchos[25, LinhaAtual].Value.ToString();
+                textBox_Identificacao8.Text = dataGridView_Cartuchos[26, LinhaAtual].Value.ToString();
+
+                textBox_PsEntrada1.Text = dataGridView_Cartuchos[27, LinhaAtual].Value.ToString();
+                textBox_PsEntrada2.Text = dataGridView_Cartuchos[28, LinhaAtual].Value.ToString();
+                textBox_PsEntrada3.Text = dataGridView_Cartuchos[29, LinhaAtual].Value.ToString();
+                textBox_PsEntrada4.Text = dataGridView_Cartuchos[30, LinhaAtual].Value.ToString();
+                textBox_PsEntrada5.Text = dataGridView_Cartuchos[31, LinhaAtual].Value.ToString();
+                textBox_PsEntrada6.Text = dataGridView_Cartuchos[32, LinhaAtual].Value.ToString();
+                textBox_PsEntrada7.Text = dataGridView_Cartuchos[33, LinhaAtual].Value.ToString();
+                textBox_PsEntrada8.Text = dataGridView_Cartuchos[34, LinhaAtual].Value.ToString();
+
+                textBox_PsSaida1.Text = dataGridView_Cartuchos[35, LinhaAtual].Value.ToString();
+                textBox_PsSaida2.Text = dataGridView_Cartuchos[36, LinhaAtual].Value.ToString();
+                textBox_PsSaida3.Text = dataGridView_Cartuchos[37, LinhaAtual].Value.ToString();
+                textBox_PsSaida4.Text = dataGridView_Cartuchos[38, LinhaAtual].Value.ToString();
+                textBox_PsSaida5.Text = dataGridView_Cartuchos[39, LinhaAtual].Value.ToString();
+                textBox_PsSaida6.Text = dataGridView_Cartuchos[40, LinhaAtual].Value.ToString();
+                textBox_PsSaida7.Text = dataGridView_Cartuchos[41, LinhaAtual].Value.ToString();
+                textBox_PsSaida8.Text = dataGridView_Cartuchos[42, LinhaAtual].Value.ToString();
+
+                textBox_Resultado1.Text = dataGridView_Cartuchos[43, LinhaAtual].Value.ToString();
+                textBox_Resultado2.Text = dataGridView_Cartuchos[44, LinhaAtual].Value.ToString();
+                textBox_Resultado3.Text = dataGridView_Cartuchos[45, LinhaAtual].Value.ToString();
+                textBox_Resultado4.Text = dataGridView_Cartuchos[46, LinhaAtual].Value.ToString();
+                textBox_Resultado5.Text = dataGridView_Cartuchos[47, LinhaAtual].Value.ToString();
+                textBox_Resultado6.Text = dataGridView_Cartuchos[48, LinhaAtual].Value.ToString();
+                textBox_Resultado7.Text = dataGridView_Cartuchos[49, LinhaAtual].Value.ToString();
+                textBox_Resultado8.Text = dataGridView_Cartuchos[50, LinhaAtual].Value.ToString();
+
+                textBox_Valor1.Text = dataGridView_Cartuchos[51, LinhaAtual].Value.ToString();
+                textBox_Valor2.Text = dataGridView_Cartuchos[52, LinhaAtual].Value.ToString();
+                textBox_Valor3.Text = dataGridView_Cartuchos[53, LinhaAtual].Value.ToString();
+                textBox_Valor4.Text = dataGridView_Cartuchos[54, LinhaAtual].Value.ToString();
+                textBox_Valor5.Text = dataGridView_Cartuchos[55, LinhaAtual].Value.ToString();
+                textBox_Valor6.Text = dataGridView_Cartuchos[56, LinhaAtual].Value.ToString();
+                textBox_Valor7.Text = dataGridView_Cartuchos[57, LinhaAtual].Value.ToString();
+                textBox_Valor8.Text = dataGridView_Cartuchos[58, LinhaAtual].Value.ToString();
+
+                textBox_Baia1.Text = dataGridView_Cartuchos[59, LinhaAtual].Value.ToString();
+                textBox_Baia2.Text = dataGridView_Cartuchos[60, LinhaAtual].Value.ToString();
+                textBox_Baia3.Text = dataGridView_Cartuchos[61, LinhaAtual].Value.ToString();
+                textBox_Baia4.Text = dataGridView_Cartuchos[62, LinhaAtual].Value.ToString();
+                textBox_Baia5.Text = dataGridView_Cartuchos[63, LinhaAtual].Value.ToString();
+                textBox_Baia6.Text = dataGridView_Cartuchos[64, LinhaAtual].Value.ToString();
+                textBox_Baia7.Text = dataGridView_Cartuchos[65, LinhaAtual].Value.ToString();
+                textBox_Baia8.Text = dataGridView_Cartuchos[66, LinhaAtual].Value.ToString();
+
+                textBox_Observacao.Text = dataGridView_Cartuchos[67, LinhaAtual].Value.ToString();
+
+                dateTimePicker_Data.Text = dataGridView_Cartuchos[68, LinhaAtual].Value.ToString();
+
+                label_Valor_Total.Text = dataGridView_Cartuchos[69, LinhaAtual].Value.ToString();
+
+                button_Processar.Text = "SALVAR";
+
+            }
+            
+        }
+
+        private void comboBox_Servico1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
+                textBox_Valor1.Text = "15";
+            else if(comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
+                textBox_Valor1.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
+                textBox_Valor1.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
+                textBox_Valor1.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
+                textBox_Valor1.Text = "60";
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }
