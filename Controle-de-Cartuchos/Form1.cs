@@ -452,6 +452,12 @@ namespace Controle_de_Cartuchos
             textBox_Nome.Focus();
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dataGridView_Visao.Update();
+            dataGridView_Cartuchos.Update();
+        }
+
 
     }
 }

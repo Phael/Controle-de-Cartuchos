@@ -29,8 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button_Novo = new System.Windows.Forms.Button();
             this.button_Excluir = new System.Windows.Forms.Button();
             this.label_Valor_Total = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -120,14 +122,13 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Pesquisa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
-            this.button_Novo = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -143,17 +144,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "HISTORICO DE CARTUCHOS";
             // 
+            // dataGridView_Visao
+            // 
+            this.dataGridView_Visao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView_Visao.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView_Visao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Visao.Location = new System.Drawing.Point(3, 16);
+            this.dataGridView_Visao.Name = "dataGridView_Visao";
+            this.dataGridView_Visao.Size = new System.Drawing.Size(412, 661);
+            this.dataGridView_Visao.TabIndex = 1;
+            this.dataGridView_Visao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
+            // 
             // dataGridView_Cartuchos
             // 
             this.dataGridView_Cartuchos.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Cartuchos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Cartuchos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView_Cartuchos.Enabled = false;
             this.dataGridView_Cartuchos.Location = new System.Drawing.Point(3, 16);
             this.dataGridView_Cartuchos.Name = "dataGridView_Cartuchos";
             this.dataGridView_Cartuchos.Size = new System.Drawing.Size(412, 661);
             this.dataGridView_Cartuchos.TabIndex = 0;
-            this.dataGridView_Cartuchos.Visible = false;
             this.dataGridView_Cartuchos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
             this.dataGridView_Cartuchos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_CellContentClick);
             // 
@@ -256,6 +267,19 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CADASTRO";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // button_Novo
+            // 
+            this.button_Novo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_Novo.BackColor = System.Drawing.Color.White;
+            this.button_Novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Novo.Location = new System.Drawing.Point(119, 669);
+            this.button_Novo.Name = "button_Novo";
+            this.button_Novo.Size = new System.Drawing.Size(100, 30);
+            this.button_Novo.TabIndex = 72;
+            this.button_Novo.Text = "NOVO";
+            this.button_Novo.UseVisualStyleBackColor = false;
+            this.button_Novo.Click += new System.EventHandler(this.button_Novo_Click);
             // 
             // button_Excluir
             // 
@@ -1081,7 +1105,7 @@
             this.textBox_Pesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.textBox_Pesquisa.Location = new System.Drawing.Point(124, 12);
             this.textBox_Pesquisa.Name = "textBox_Pesquisa";
-            this.textBox_Pesquisa.Size = new System.Drawing.Size(302, 20);
+            this.textBox_Pesquisa.Size = new System.Drawing.Size(244, 20);
             this.textBox_Pesquisa.TabIndex = 92;
             this.textBox_Pesquisa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -1094,30 +1118,19 @@
             this.label13.TabIndex = 92;
             this.label13.Text = "CONSULTAR NOME :";
             // 
-            // dataGridView_Visao
+            // button1
             // 
-            this.dataGridView_Visao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView_Visao.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView_Visao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Visao.Location = new System.Drawing.Point(7, 16);
-            this.dataGridView_Visao.Name = "dataGridView_Visao";
-            this.dataGridView_Visao.Size = new System.Drawing.Size(406, 655);
-            this.dataGridView_Visao.TabIndex = 1;
-            this.dataGridView_Visao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
-            // 
-            // button_Novo
-            // 
-            this.button_Novo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button_Novo.BackColor = System.Drawing.Color.White;
-            this.button_Novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Novo.Location = new System.Drawing.Point(119, 669);
-            this.button_Novo.Name = "button_Novo";
-            this.button_Novo.Size = new System.Drawing.Size(100, 30);
-            this.button_Novo.TabIndex = 72;
-            this.button_Novo.Text = "NOVO";
-            this.button_Novo.UseVisualStyleBackColor = false;
-            this.button_Novo.Click += new System.EventHandler(this.button_Novo_Click);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImage = global::Controle_de_Cartuchos.Properties.Resources.atualizar;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(394, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(30, 33);
+            this.button1.TabIndex = 91;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form_Principal
             // 
@@ -1126,6 +1139,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1016, 751);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox_Pesquisa);
             this.Controls.Add(this.groupBox2);
@@ -1134,13 +1148,13 @@
             this.Text = "Controle de Cartuchos 1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1242,6 +1256,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView_Visao;
         private System.Windows.Forms.Button button_Novo;
+        private System.Windows.Forms.Button button1;
     }
 }
 
