@@ -58,6 +58,7 @@ namespace Controle_de_Cartuchos
         private void Form1_Load(object sender, EventArgs e)
         {
             BancoDeDados();
+            textBox_Nome.Focus();
         }
         
         private void button_Processar_Click(object sender, EventArgs e)
@@ -366,8 +367,7 @@ namespace Controle_de_Cartuchos
 
         private void button_Novo_Click(object sender, EventArgs e)
         {
-            button_Processar.Text = "PROCESSAR";
-
+           
             textBox_Nome.Text = string.Empty;
             textBox_Telefone.Text = string.Empty;
 
@@ -445,6 +445,11 @@ namespace Controle_de_Cartuchos
 
             textBox_Observacao.Text = string.Empty;
 
+            label_Os.Text = "Os";
+
+            button_Processar.Text = "PROCESSAR";
+
+            textBox_Nome.Focus();
         }
 
 
