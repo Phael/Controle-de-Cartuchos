@@ -12,7 +12,7 @@ namespace Controle_de_Cartuchos
 {
     public partial class Form_Principal : Form
     {
-        string CaminhoBancoDados = "D:/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
+        string CaminhoBancoDados = "C:/Documents and Settings/Administrador/Desktop/Dropbox/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
         int LinhaAtual;
         string CodigoID;
 
@@ -45,7 +45,6 @@ namespace Controle_de_Cartuchos
                 dataGridView_Cartuchos.DataSource = Ds;
                 dataGridView_Cartuchos.DataMember = "Cartuchos";
 
-                OleDbDataAdapter Historico2 = new OleDbDataAdapter("SELECT Código, Nome, Data FROM Cartuchos", Conexao);
             }
         }
 
@@ -153,7 +152,6 @@ namespace Controle_de_Cartuchos
                 OleDbCommand cmdInserir = new OleDbCommand(Inserir, ConexaoBD);
                 try
                 {
-                    CodigoID = dataGridView_Cartuchos[0, LinhaAtual].Value.ToString();
                     // abre o banco
                     ConexaoBD.Open();
                     // executa a query
@@ -314,6 +312,43 @@ namespace Controle_de_Cartuchos
 
         private void groupBox2_Enter(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string SqlCmd="";
+
+            if (textBox_Pesquisa.Text != "")
+                SqlCmd = "SELECT * FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
+
+            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados);
+
+            DataSet Ds = new DataSet();
+            try
+            {
+                Conexao.Open();
+            }
+            catch (System.Exception Erro)
+            {
+                MessageBox.Show(Erro.Message.ToString());
+            }
+
+            if (Conexao.State == ConnectionState.Open)
+            {
+                if (textBox_Pesquisa.Text != null && textBox_Pesquisa.Text != "")
+                {
+                    OleDbDataAdapter Historico = new OleDbDataAdapter(SqlCmd, Conexao);
+
+                    Historico.Fill(Ds, "Cartuchos");
+
+                    dataGridView_Cartuchos.DataSource = Ds;
+                    dataGridView_Cartuchos.DataMember = "Cartuchos";
+                }
+                else
+                    BancoDeDados();
+
+            }
 
         }
 

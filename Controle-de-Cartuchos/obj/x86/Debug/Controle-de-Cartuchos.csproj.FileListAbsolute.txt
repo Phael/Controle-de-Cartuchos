@@ -27,3 +27,13 @@ D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Control
 D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
 D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
 D:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.exe
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.pdb
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.pdb
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
