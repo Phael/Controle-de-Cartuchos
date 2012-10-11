@@ -20,6 +20,92 @@ namespace Controle_de_Cartuchos
         {
             InitializeComponent();
         }
+
+        public void Limpar()
+        {
+            textBox_Nome.Text = string.Empty;
+            textBox_Telefone.Text = string.Empty;
+
+            comboBox_Produto1.Text = string.Empty;
+            comboBox_Produto2.Text = string.Empty;
+            comboBox_Produto3.Text = string.Empty;
+            comboBox_Produto4.Text = string.Empty;
+            comboBox_Produto5.Text = string.Empty;
+            comboBox_Produto6.Text = string.Empty;
+            comboBox_Produto7.Text = string.Empty;
+            comboBox_Produto8.Text = string.Empty;
+
+            comboBox_Servico1.Text = string.Empty;
+            comboBox_Servico2.Text = string.Empty;
+            comboBox_Servico3.Text = string.Empty;
+            comboBox_Servico4.Text = string.Empty;
+            comboBox_Servico5.Text = string.Empty;
+            comboBox_Servico6.Text = string.Empty;
+            comboBox_Servico7.Text = string.Empty;
+            comboBox_Servico8.Text = string.Empty;
+
+            textBox_Identificacao1.Text = string.Empty;
+            textBox_Identificacao2.Text = string.Empty;
+            textBox_Identificacao3.Text = string.Empty;
+            textBox_Identificacao4.Text = string.Empty;
+            textBox_Identificacao5.Text = string.Empty;
+            textBox_Identificacao6.Text = string.Empty;
+            textBox_Identificacao7.Text = string.Empty;
+            textBox_Identificacao8.Text = string.Empty;
+
+            textBox_PsEntrada1.Text = string.Empty;
+            textBox_PsEntrada2.Text = string.Empty;
+            textBox_PsEntrada3.Text = string.Empty;
+            textBox_PsEntrada4.Text = string.Empty;
+            textBox_PsEntrada5.Text = string.Empty;
+            textBox_PsEntrada6.Text = string.Empty;
+            textBox_PsEntrada7.Text = string.Empty;
+            textBox_PsEntrada8.Text = string.Empty;
+
+            textBox_PsSaida1.Text = string.Empty;
+            textBox_PsSaida2.Text = string.Empty;
+            textBox_PsSaida3.Text = string.Empty;
+            textBox_PsSaida4.Text = string.Empty;
+            textBox_PsSaida5.Text = string.Empty;
+            textBox_PsSaida6.Text = string.Empty;
+            textBox_PsSaida7.Text = string.Empty;
+            textBox_PsSaida8.Text = string.Empty;
+
+            textBox_Resultado1.Text = string.Empty;
+            textBox_Resultado2.Text = string.Empty;
+            textBox_Resultado3.Text = string.Empty;
+            textBox_Resultado4.Text = string.Empty;
+            textBox_Resultado5.Text = string.Empty;
+            textBox_Resultado6.Text = string.Empty;
+            textBox_Resultado7.Text = string.Empty;
+            textBox_Resultado8.Text = string.Empty;
+
+            textBox_Valor1.Text = "0";
+            textBox_Valor2.Text = "0";
+            textBox_Valor3.Text = "0";
+            textBox_Valor4.Text = "0";
+            textBox_Valor5.Text = "0";
+            textBox_Valor6.Text = "0";
+            textBox_Valor7.Text = "0";
+            textBox_Valor8.Text = "0";
+
+            textBox_Baia1.Text = string.Empty;
+            textBox_Baia2.Text = string.Empty;
+            textBox_Baia3.Text = string.Empty;
+            textBox_Baia4.Text = string.Empty;
+            textBox_Baia5.Text = string.Empty;
+            textBox_Baia6.Text = string.Empty;
+            textBox_Baia7.Text = string.Empty;
+            textBox_Baia8.Text = string.Empty;
+
+            textBox_Observacao.Text = string.Empty;
+
+            label_Os.Text = "Os";
+
+            button_Processar.Text = "PROCESSAR";
+
+            textBox_Nome.Focus();
+        }
         public void BancoDeDados()
         {
             
@@ -178,6 +264,7 @@ namespace Controle_de_Cartuchos
                     dataGridView_Cartuchos.Update();
                     BancoDeDados();
                 }
+                Limpar();
             }
             else
             {
@@ -207,6 +294,7 @@ namespace Controle_de_Cartuchos
                     BancoDeDados();
                     button_Processar.Text = "PROCESSAR";
                 }
+                Limpar();
             }
         }
 
@@ -367,89 +455,8 @@ namespace Controle_de_Cartuchos
 
         private void button_Novo_Click(object sender, EventArgs e)
         {
-           
-            textBox_Nome.Text = string.Empty;
-            textBox_Telefone.Text = string.Empty;
 
-            comboBox_Produto1.Text = string.Empty;
-            comboBox_Produto2.Text = string.Empty;
-            comboBox_Produto3.Text = string.Empty;
-            comboBox_Produto4.Text = string.Empty;
-            comboBox_Produto5.Text = string.Empty;
-            comboBox_Produto6.Text = string.Empty;
-            comboBox_Produto7.Text = string.Empty;
-            comboBox_Produto8.Text = string.Empty;
-
-            comboBox_Servico1.Text = string.Empty;
-            comboBox_Servico2.Text = string.Empty;
-            comboBox_Servico3.Text = string.Empty;
-            comboBox_Servico4.Text = string.Empty;
-            comboBox_Servico5.Text = string.Empty;
-            comboBox_Servico6.Text = string.Empty;
-            comboBox_Servico7.Text = string.Empty;
-            comboBox_Servico8.Text = string.Empty;
-
-            textBox_Identificacao1.Text = string.Empty;
-            textBox_Identificacao2.Text = string.Empty;
-            textBox_Identificacao3.Text = string.Empty;
-            textBox_Identificacao4.Text = string.Empty;
-            textBox_Identificacao5.Text = string.Empty;
-            textBox_Identificacao6.Text = string.Empty;
-            textBox_Identificacao7.Text = string.Empty;
-            textBox_Identificacao8.Text = string.Empty;
-
-            textBox_PsEntrada1.Text = string.Empty;
-            textBox_PsEntrada2.Text = string.Empty;
-            textBox_PsEntrada3.Text = string.Empty;
-            textBox_PsEntrada4.Text = string.Empty;
-            textBox_PsEntrada5.Text = string.Empty;
-            textBox_PsEntrada6.Text = string.Empty;
-            textBox_PsEntrada7.Text = string.Empty;
-            textBox_PsEntrada8.Text = string.Empty;
-
-            textBox_PsSaida1.Text = string.Empty;
-            textBox_PsSaida2.Text = string.Empty;
-            textBox_PsSaida3.Text = string.Empty;
-            textBox_PsSaida4.Text = string.Empty;
-            textBox_PsSaida5.Text = string.Empty;
-            textBox_PsSaida6.Text = string.Empty;
-            textBox_PsSaida7.Text = string.Empty;
-            textBox_PsSaida8.Text = string.Empty;
-
-            textBox_Resultado1.Text = string.Empty;
-            textBox_Resultado2.Text = string.Empty;
-            textBox_Resultado3.Text = string.Empty;
-            textBox_Resultado4.Text = string.Empty;
-            textBox_Resultado5.Text = string.Empty;
-            textBox_Resultado6.Text = string.Empty;
-            textBox_Resultado7.Text = string.Empty;
-            textBox_Resultado8.Text = string.Empty;
-
-            textBox_Valor1.Text = "0";
-            textBox_Valor2.Text = "0";
-            textBox_Valor3.Text = "0";
-            textBox_Valor4.Text = "0";
-            textBox_Valor5.Text = "0";
-            textBox_Valor6.Text = "0";
-            textBox_Valor7.Text = "0";
-            textBox_Valor8.Text = "0";
-
-            textBox_Baia1.Text = string.Empty;
-            textBox_Baia2.Text = string.Empty;
-            textBox_Baia3.Text = string.Empty;
-            textBox_Baia4.Text = string.Empty;
-            textBox_Baia5.Text = string.Empty;
-            textBox_Baia6.Text = string.Empty;
-            textBox_Baia7.Text = string.Empty;
-            textBox_Baia8.Text = string.Empty;
-
-            textBox_Observacao.Text = string.Empty;
-
-            label_Os.Text = "Os";
-
-            button_Processar.Text = "PROCESSAR";
-
-            textBox_Nome.Focus();
+            Limpar();
         }
 
         private void button1_Click(object sender, EventArgs e)
