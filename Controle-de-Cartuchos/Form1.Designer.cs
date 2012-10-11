@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dataGridView_Apresenta = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Excluir = new System.Windows.Forms.Button();
@@ -120,7 +119,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Apresenta)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -129,7 +127,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.dataGridView_Apresenta);
             this.groupBox1.Controls.Add(this.dataGridView_Cartuchos);
             this.groupBox1.Location = new System.Drawing.Point(8, 6);
             this.groupBox1.Name = "groupBox1";
@@ -137,14 +134,6 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "HISTORICO DE CARTUCHOS";
-            // 
-            // dataGridView_Apresenta
-            // 
-            this.dataGridView_Apresenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_Apresenta.Location = new System.Drawing.Point(48, 153);
-            this.dataGridView_Apresenta.Name = "dataGridView_Apresenta";
-            this.dataGridView_Apresenta.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView_Apresenta.TabIndex = 1;
             // 
             // dataGridView_Cartuchos
             // 
@@ -388,6 +377,7 @@
             this.button_Processar.TabIndex = 74;
             this.button_Processar.Text = "PROCESSAR";
             this.button_Processar.UseVisualStyleBackColor = true;
+            this.button_Processar.Click += new System.EventHandler(this.button_Processar_Click);
             // 
             // label11
             // 
@@ -1024,7 +1014,6 @@
             this.Text = "Controle de Cartuchos";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Apresenta)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -1127,7 +1116,6 @@
         private System.Windows.Forms.Button button_Excluir;
         private System.Windows.Forms.Label label_Valor_Total;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DataGridView dataGridView_Apresenta;
     }
 }
 
