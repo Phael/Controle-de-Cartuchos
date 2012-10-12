@@ -25,7 +25,131 @@ namespace Controle_de_Cartuchos
 
         public void Cartucho01()
         {
+            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
+                textBox_Valor1.Text = "15";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
+                textBox_Valor1.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
+                textBox_Valor1.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
+                textBox_Valor1.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
+                textBox_Valor1.Text = "60";
+            else
+                textBox_Valor1.Text = "0";
 
+        }
+
+        public void Cartucho02()
+        {
+            if (comboBox_Produto2.Text == "Cartucho" && comboBox_Servico2.Text == "Recarga")
+                textBox_Valor2.Text = "15";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Samsung")
+                textBox_Valor2.Text = "85";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga HP")
+                textBox_Valor2.Text = "60";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Lexmark")
+                textBox_Valor2.Text = "70";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Brother")
+                textBox_Valor2.Text = "60";
+            else
+                textBox_Valor2.Text = "0";
+        }
+
+        public void Cartucho03()
+        {
+            if (comboBox_Produto3.Text == "Cartucho" && comboBox_Servico3.Text == "Recarga")
+                textBox_Valor3.Text = "15";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Samsung")
+                textBox_Valor3.Text = "85";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga HP")
+                textBox_Valor3.Text = "60";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Lexmark")
+                textBox_Valor3.Text = "70";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Brother")
+                textBox_Valor3.Text = "60";
+            else
+                textBox_Valor3.Text = "0";
+        }
+
+        public void Cartucho04()
+        {
+            if (comboBox_Produto4.Text == "Cartucho" && comboBox_Servico4.Text == "Recarga")
+                textBox_Valor4.Text = "15";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Samsung")
+                textBox_Valor4.Text = "85";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga HP")
+                textBox_Valor4.Text = "60";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Lexmark")
+                textBox_Valor4.Text = "70";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Brother")
+                textBox_Valor4.Text = "60";
+            else
+                textBox_Valor4.Text = "0";
+        }
+
+        public void Cartucho05()
+        {
+            if (comboBox_Produto5.Text == "Cartucho" && comboBox_Servico5.Text == "Recarga")
+                textBox_Valor5.Text = "15";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Samsung")
+                textBox_Valor5.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga HP")
+                textBox_Valor5.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Lexmark")
+                textBox_Valor5.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Brother")
+                textBox_Valor5.Text = "60";
+            else
+                textBox_Valor5.Text = "0";
+        }
+
+        public void Cartucho06()
+        {
+            if (comboBox_Produto6.Text == "Cartucho" && comboBox_Servico6.Text == "Recarga")
+                textBox_Valor6.Text = "15";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Samsung")
+                textBox_Valor6.Text = "85";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga HP")
+                textBox_Valor6.Text = "60";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Lexmark")
+                textBox_Valor6.Text = "70";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Brother")
+                textBox_Valor6.Text = "60";
+            else
+                textBox_Valor6.Text = "0";
+        }
+
+        public void Cartucho07()
+        {
+            if (comboBox_Produto7.Text == "Cartucho" && comboBox_Servico7.Text == "Recarga")
+                textBox_Valor7.Text = "15";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Samsung")
+                textBox_Valor7.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga HP")
+                textBox_Valor7.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Lexmark")
+                textBox_Valor7.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Brother")
+                textBox_Valor7.Text = "60";
+            else
+                textBox_Valor7.Text = "0";
+        }
+
+        public void Cartucho08()
+        {
+            if (comboBox_Produto8.Text == "Cartucho" && comboBox_Servico8.Text == "Recarga")
+                textBox_Valor8.Text = "15";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Samsung")
+                textBox_Valor8.Text = "85";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga HP")
+                textBox_Valor8.Text = "60";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Lexmark")
+                textBox_Valor8.Text = "70";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Brother")
+                textBox_Valor8.Text = "60";
+            else
+                textBox_Valor8.Text = "0";
         }
         public void Limpar()
         {
@@ -117,6 +241,10 @@ namespace Controle_de_Cartuchos
 
             label_Os.Text = "Os";
 
+            textBox_ValorTotal.Text = string.Empty;
+
+            comboBox_Encerrada.Text = string.Empty;
+
             button_Processar.Text = "PROCESSAR";
 
             textBox_Nome.Focus();
@@ -173,10 +301,10 @@ namespace Controle_de_Cartuchos
 
                 OleDbDataAdapter Historico_Visao = new OleDbDataAdapter("SELECT OS, Nome, Data,Telefone  FROM Cartuchos", Conexao);
 
-                Historico_Visao.Fill(Da, "Cartuchos");
+                Historico_Visao.Fill(Da, "Cartuchos_Visao");
 
                 dataGridView_Visao.DataSource = Da;
-                dataGridView_Visao.DataMember = "Cartuchos";
+                dataGridView_Visao.DataMember = "Cartuchos_Visao";
 
             }
         }
@@ -265,18 +393,22 @@ namespace Controle_de_Cartuchos
             string Baia7 = textBox_Baia7.Text;
             string Baia8 = textBox_Baia8.Text;
 
+            string Encerrada = comboBox_Encerrada.Text;
+
             string Observacao = textBox_Observacao.Text;
 
             string Data = dateTimePicker_Data.Value.ToShortDateString();
 
             float ValorTotal = float.Parse(Valor1) + float.Parse(Valor2) + float.Parse(Valor3) + float.Parse(Valor4) + float.Parse(Valor5) + float.Parse(Valor6) + float.Parse(Valor7) + float.Parse(Valor8);
 
-            textBox_ValorTotal.Text = Convert.ToString(ValorTotal)+",00";
+            string ValorTotal2 = Convert.ToString(ValorTotal)+",00";
+
+            textBox_ValorTotal.Text = ValorTotal2;
 
             if (button_Processar.Text == "PROCESSAR")
             {
                 string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
-                string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "')";
+                string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data, ValorTotal, Encerrada)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "' , '"+ValorTotal2+"','"+Encerrada+"')";
 
 
                 //cria a conexão com o banco de dados
@@ -311,7 +443,7 @@ namespace Controle_de_Cartuchos
                 string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
                 CodigoID = dataGridView_Cartuchos[0, LinhaAtual].Value.ToString(); 
 
-                string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data = '" + Data + "' WHERE OS= " + int.Parse(CodigoID) + "";
+                string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data = '" + Data + "', ValorTotal = '" + ValorTotal2 + "', Encerrada = '" + Encerrada + "' WHERE OS= " + int.Parse(CodigoID) + "";
 
                 //cria a conexão com o banco de dados
                 OleDbConnection ConexaoBD = new OleDbConnection(Conexao);
@@ -424,6 +556,10 @@ namespace Controle_de_Cartuchos
 
                 dateTimePicker_Data.Text = dataGridView_Cartuchos[68, LinhaAtual].Value.ToString();
 
+                textBox_ValorTotal.Text = dataGridView_Cartuchos[69, LinhaAtual].Value.ToString();
+
+                comboBox_Encerrada.Text = dataGridView_Cartuchos[70, LinhaAtual].Value.ToString();
+
                 button_Processar.Text = "SALVAR";
 
             }
@@ -535,18 +671,7 @@ namespace Controle_de_Cartuchos
         }
         private void comboBox_Servico1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
-                textBox_Valor1.Text = "15";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
-                textBox_Valor1.Text = "85";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
-                textBox_Valor1.Text = "60";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
-                textBox_Valor1.Text = "70";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
-                textBox_Valor1.Text = "60";
-            else
-                textBox_Valor1.Text = "0";
+            
         }
 
         private void dataGridView_Visao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)

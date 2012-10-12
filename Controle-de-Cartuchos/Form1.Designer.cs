@@ -116,7 +116,6 @@
             this.dateTimePicker_Data = new System.Windows.Forms.DateTimePicker();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label_Os = new System.Windows.Forms.Label();
-            this.textBox_Telefone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -126,6 +125,9 @@
             this.button_Atualizar = new System.Windows.Forms.Button();
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
+            this.label_Encerrada = new System.Windows.Forms.Label();
+            this.comboBox_Encerrada = new System.Windows.Forms.ComboBox();
+            this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -181,6 +183,9 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.textBox_Telefone);
+            this.groupBox2.Controls.Add(this.label_Encerrada);
+            this.groupBox2.Controls.Add(this.comboBox_Encerrada);
             this.groupBox2.Controls.Add(this.textBox_ValorTotal);
             this.groupBox2.Controls.Add(this.button_Novo);
             this.groupBox2.Controls.Add(this.button_Excluir);
@@ -263,7 +268,6 @@
             this.groupBox2.Controls.Add(this.comboBox_Produto1);
             this.groupBox2.Controls.Add(this.groupBox4);
             this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.textBox_Telefone);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Controls.Add(this.groupBox5);
@@ -1094,13 +1098,6 @@
             this.label_Os.TabIndex = 88;
             this.label_Os.Text = "Os";
             // 
-            // textBox_Telefone
-            // 
-            this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
-            this.textBox_Telefone.Name = "textBox_Telefone";
-            this.textBox_Telefone.Size = new System.Drawing.Size(306, 20);
-            this.textBox_Telefone.TabIndex = 2;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -1194,6 +1191,37 @@
             this.button_AlterarCaminho.UseVisualStyleBackColor = false;
             this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
             // 
+            // label_Encerrada
+            // 
+            this.label_Encerrada.AutoSize = true;
+            this.label_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Encerrada.Location = new System.Drawing.Point(377, 507);
+            this.label_Encerrada.Name = "label_Encerrada";
+            this.label_Encerrada.Size = new System.Drawing.Size(80, 13);
+            this.label_Encerrada.TabIndex = 92;
+            this.label_Encerrada.Text = "ENCERRADA :";
+            // 
+            // comboBox_Encerrada
+            // 
+            this.comboBox_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Encerrada.FormattingEnabled = true;
+            this.comboBox_Encerrada.Items.AddRange(new object[] {
+            "Sim",
+            "Nao"});
+            this.comboBox_Encerrada.Location = new System.Drawing.Point(470, 499);
+            this.comboBox_Encerrada.Name = "comboBox_Encerrada";
+            this.comboBox_Encerrada.Size = new System.Drawing.Size(60, 21);
+            this.comboBox_Encerrada.TabIndex = 91;
+            this.comboBox_Encerrada.Text = "Nao";
+            // 
+            // textBox_Telefone
+            // 
+            this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
+            this.textBox_Telefone.Mask = "(99) 0000-0000";
+            this.textBox_Telefone.Name = "textBox_Telefone";
+            this.textBox_Telefone.Size = new System.Drawing.Size(306, 20);
+            this.textBox_Telefone.TabIndex = 2;
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1237,7 +1265,6 @@
         private System.Windows.Forms.ComboBox comboBox_Produto1;
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox_Telefone;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox_Baia8;
         private System.Windows.Forms.TextBox textBox_Resultado8;
@@ -1327,6 +1354,9 @@
         private System.Windows.Forms.Button button_AlterarCaminho;
         private System.Windows.Forms.TextBox textBox_ValorTotal;
         private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.Label label_Encerrada;
+        private System.Windows.Forms.ComboBox comboBox_Encerrada;
+        private System.Windows.Forms.MaskedTextBox textBox_Telefone;
     }
 }
 
