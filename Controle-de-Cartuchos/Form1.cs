@@ -683,5 +683,30 @@ namespace Controle_de_Cartuchos
         {
 
         }
+
+        private void button_Excluir_Click(object sender, EventArgs e)
+        {
+            string Excluir = "DELET * FROM Cartuchos WHERE OS=" + int.Parse(CodigoID)+"";
+
+            string Conexao = "@Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
+
+            OleDbConnection dbConexao = new OleDbConnection(Conexao);
+
+            OleDbCommand cmdExcluir = new OleDbCommand(Excluir, dbConexao);
+
+            try
+            {
+                dbConexao.Open();
+                cmdExcluir.ExecuteNonQuery();
+            }
+            catch (Exception Erro)
+            {
+                MessageBox.Show("Erro " + Erro);
+            }
+            finally
+            {
+                dbConexao.Close();
+            }                
+        }
     }
 }

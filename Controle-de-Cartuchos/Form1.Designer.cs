@@ -315,6 +315,7 @@
             this.button_Excluir.TabIndex = 71;
             this.button_Excluir.Text = "EXCLUIR";
             this.button_Excluir.UseVisualStyleBackColor = false;
+            this.button_Excluir.Click += new System.EventHandler(this.button_Excluir_Click);
             // 
             // textBox_Nome
             // 
@@ -1237,6 +1238,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
+            this.MinimumSize = new System.Drawing.Size(1024, 778);
             this.Name = "Form_Principal";
             this.Text = "Controle de Cartuchos 1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
