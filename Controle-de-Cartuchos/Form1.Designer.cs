@@ -32,9 +32,9 @@
             this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_ValorTotal = new System.Windows.Forms.TextBox();
             this.button_Novo = new System.Windows.Forms.Button();
             this.button_Excluir = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.textBox_Identificacao8 = new System.Windows.Forms.TextBox();
             this.textBox_Identificacao7 = new System.Windows.Forms.TextBox();
@@ -119,13 +119,13 @@
             this.textBox_Telefone = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBox_Pesquisa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.button_Atualizar = new System.Windows.Forms.Button();
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -150,15 +150,19 @@
             // 
             // dataGridView_Visao
             // 
+            this.dataGridView_Visao.AllowUserToDeleteRows = false;
             this.dataGridView_Visao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_Visao.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Visao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Visao.Location = new System.Drawing.Point(3, 16);
             this.dataGridView_Visao.Name = "dataGridView_Visao";
+            this.dataGridView_Visao.ReadOnly = true;
             this.dataGridView_Visao.Size = new System.Drawing.Size(412, 661);
             this.dataGridView_Visao.TabIndex = 1;
             this.dataGridView_Visao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
+            this.dataGridView_Visao.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Visao_CellContentDoubleClick);
+            this.dataGridView_Visao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Visao_CellDoubleClick);
             // 
             // dataGridView_Cartuchos
             // 
@@ -177,7 +181,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox2.Controls.Add(this.textBox1);
+            this.groupBox2.Controls.Add(this.textBox_ValorTotal);
             this.groupBox2.Controls.Add(this.button_Novo);
             this.groupBox2.Controls.Add(this.button_Excluir);
             this.groupBox2.Controls.Add(this.textBox_Nome);
@@ -272,6 +276,17 @@
             this.groupBox2.Text = "CADASTRO";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
+            // textBox_ValorTotal
+            // 
+            this.textBox_ValorTotal.BackColor = System.Drawing.Color.LightPink;
+            this.textBox_ValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_ValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_ValorTotal.Location = new System.Drawing.Point(470, 461);
+            this.textBox_ValorTotal.Multiline = true;
+            this.textBox_ValorTotal.Name = "textBox_ValorTotal";
+            this.textBox_ValorTotal.Size = new System.Drawing.Size(60, 22);
+            this.textBox_ValorTotal.TabIndex = 90;
+            // 
             // button_Novo
             // 
             this.button_Novo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -297,16 +312,6 @@
             this.button_Excluir.Text = "EXCLUIR";
             this.button_Excluir.UseVisualStyleBackColor = false;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(341, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 13);
-            this.label6.TabIndex = 89;
-            this.label6.Text = "VALOR TOTAL :";
-            // 
             // textBox_Nome
             // 
             this.textBox_Nome.Location = new System.Drawing.Point(91, 126);
@@ -316,6 +321,7 @@
             // 
             // textBox_Identificacao8
             // 
+            this.textBox_Identificacao8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao8.Location = new System.Drawing.Point(192, 429);
             this.textBox_Identificacao8.Name = "textBox_Identificacao8";
             this.textBox_Identificacao8.Size = new System.Drawing.Size(68, 20);
@@ -323,6 +329,7 @@
             // 
             // textBox_Identificacao7
             // 
+            this.textBox_Identificacao7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao7.Location = new System.Drawing.Point(192, 400);
             this.textBox_Identificacao7.Name = "textBox_Identificacao7";
             this.textBox_Identificacao7.Size = new System.Drawing.Size(68, 20);
@@ -330,6 +337,7 @@
             // 
             // textBox_Identificacao6
             // 
+            this.textBox_Identificacao6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao6.Location = new System.Drawing.Point(192, 371);
             this.textBox_Identificacao6.Name = "textBox_Identificacao6";
             this.textBox_Identificacao6.Size = new System.Drawing.Size(68, 20);
@@ -337,6 +345,7 @@
             // 
             // textBox_Identificacao5
             // 
+            this.textBox_Identificacao5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao5.Location = new System.Drawing.Point(192, 342);
             this.textBox_Identificacao5.Name = "textBox_Identificacao5";
             this.textBox_Identificacao5.Size = new System.Drawing.Size(68, 20);
@@ -344,6 +353,7 @@
             // 
             // textBox_Identificacao4
             // 
+            this.textBox_Identificacao4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao4.Location = new System.Drawing.Point(192, 312);
             this.textBox_Identificacao4.Name = "textBox_Identificacao4";
             this.textBox_Identificacao4.Size = new System.Drawing.Size(68, 20);
@@ -351,6 +361,7 @@
             // 
             // textBox_Identificacao3
             // 
+            this.textBox_Identificacao3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao3.Location = new System.Drawing.Point(192, 283);
             this.textBox_Identificacao3.Name = "textBox_Identificacao3";
             this.textBox_Identificacao3.Size = new System.Drawing.Size(68, 20);
@@ -358,6 +369,7 @@
             // 
             // textBox_Identificacao2
             // 
+            this.textBox_Identificacao2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao2.Location = new System.Drawing.Point(192, 252);
             this.textBox_Identificacao2.Name = "textBox_Identificacao2";
             this.textBox_Identificacao2.Size = new System.Drawing.Size(68, 20);
@@ -365,6 +377,7 @@
             // 
             // textBox_Identificacao1
             // 
+            this.textBox_Identificacao1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Identificacao1.Location = new System.Drawing.Point(192, 222);
             this.textBox_Identificacao1.Name = "textBox_Identificacao1";
             this.textBox_Identificacao1.Size = new System.Drawing.Size(68, 20);
@@ -437,6 +450,7 @@
             // 
             // textBox_Baia8
             // 
+            this.textBox_Baia8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia8.Location = new System.Drawing.Point(529, 431);
             this.textBox_Baia8.Name = "textBox_Baia8";
             this.textBox_Baia8.Size = new System.Drawing.Size(34, 20);
@@ -444,6 +458,7 @@
             // 
             // textBox_Resultado8
             // 
+            this.textBox_Resultado8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado8.Location = new System.Drawing.Point(401, 431);
             this.textBox_Resultado8.Name = "textBox_Resultado8";
             this.textBox_Resultado8.Size = new System.Drawing.Size(63, 20);
@@ -451,6 +466,7 @@
             // 
             // textBox_PsEntrada8
             // 
+            this.textBox_PsEntrada8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada8.Location = new System.Drawing.Point(266, 429);
             this.textBox_PsEntrada8.Name = "textBox_PsEntrada8";
             this.textBox_PsEntrada8.Size = new System.Drawing.Size(65, 20);
@@ -458,6 +474,7 @@
             // 
             // textBox_PsSaida8
             // 
+            this.textBox_PsSaida8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida8.Location = new System.Drawing.Point(337, 430);
             this.textBox_PsSaida8.Name = "textBox_PsSaida8";
             this.textBox_PsSaida8.Size = new System.Drawing.Size(60, 20);
@@ -465,6 +482,7 @@
             // 
             // textBox_Valor8
             // 
+            this.textBox_Valor8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor8.Location = new System.Drawing.Point(470, 431);
             this.textBox_Valor8.Name = "textBox_Valor8";
             this.textBox_Valor8.Size = new System.Drawing.Size(53, 20);
@@ -473,6 +491,7 @@
             // 
             // comboBox_Servico8
             // 
+            this.comboBox_Servico8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico8.FormattingEnabled = true;
             this.comboBox_Servico8.Items.AddRange(new object[] {
             "Recarga",
@@ -484,11 +503,11 @@
             // 
             // comboBox_Produto8
             // 
+            this.comboBox_Produto8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto8.FormattingEnabled = true;
             this.comboBox_Produto8.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto8.Location = new System.Drawing.Point(16, 429);
@@ -498,6 +517,7 @@
             // 
             // textBox_Baia7
             // 
+            this.textBox_Baia7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia7.Location = new System.Drawing.Point(529, 402);
             this.textBox_Baia7.Name = "textBox_Baia7";
             this.textBox_Baia7.Size = new System.Drawing.Size(34, 20);
@@ -505,6 +525,7 @@
             // 
             // textBox_Resultado7
             // 
+            this.textBox_Resultado7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado7.Location = new System.Drawing.Point(401, 402);
             this.textBox_Resultado7.Name = "textBox_Resultado7";
             this.textBox_Resultado7.Size = new System.Drawing.Size(63, 20);
@@ -512,6 +533,7 @@
             // 
             // textBox_PsEntrada7
             // 
+            this.textBox_PsEntrada7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada7.Location = new System.Drawing.Point(266, 400);
             this.textBox_PsEntrada7.Name = "textBox_PsEntrada7";
             this.textBox_PsEntrada7.Size = new System.Drawing.Size(65, 20);
@@ -519,6 +541,7 @@
             // 
             // textBox_PsSaida7
             // 
+            this.textBox_PsSaida7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida7.Location = new System.Drawing.Point(337, 401);
             this.textBox_PsSaida7.Name = "textBox_PsSaida7";
             this.textBox_PsSaida7.Size = new System.Drawing.Size(60, 20);
@@ -526,6 +549,7 @@
             // 
             // textBox_Valor7
             // 
+            this.textBox_Valor7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor7.Location = new System.Drawing.Point(470, 402);
             this.textBox_Valor7.Name = "textBox_Valor7";
             this.textBox_Valor7.Size = new System.Drawing.Size(53, 20);
@@ -534,6 +558,7 @@
             // 
             // comboBox_Servico7
             // 
+            this.comboBox_Servico7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico7.FormattingEnabled = true;
             this.comboBox_Servico7.Items.AddRange(new object[] {
             "Recarga",
@@ -545,11 +570,11 @@
             // 
             // comboBox_Produto7
             // 
+            this.comboBox_Produto7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto7.FormattingEnabled = true;
             this.comboBox_Produto7.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto7.Location = new System.Drawing.Point(16, 400);
@@ -559,6 +584,7 @@
             // 
             // textBox_Baia6
             // 
+            this.textBox_Baia6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia6.Location = new System.Drawing.Point(529, 373);
             this.textBox_Baia6.Name = "textBox_Baia6";
             this.textBox_Baia6.Size = new System.Drawing.Size(34, 20);
@@ -566,6 +592,7 @@
             // 
             // textBox_Resultado6
             // 
+            this.textBox_Resultado6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado6.Location = new System.Drawing.Point(401, 373);
             this.textBox_Resultado6.Name = "textBox_Resultado6";
             this.textBox_Resultado6.Size = new System.Drawing.Size(63, 20);
@@ -573,6 +600,7 @@
             // 
             // textBox_PsEntrada6
             // 
+            this.textBox_PsEntrada6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada6.Location = new System.Drawing.Point(266, 371);
             this.textBox_PsEntrada6.Name = "textBox_PsEntrada6";
             this.textBox_PsEntrada6.Size = new System.Drawing.Size(65, 20);
@@ -580,6 +608,7 @@
             // 
             // textBox_PsSaida6
             // 
+            this.textBox_PsSaida6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida6.Location = new System.Drawing.Point(337, 372);
             this.textBox_PsSaida6.Name = "textBox_PsSaida6";
             this.textBox_PsSaida6.Size = new System.Drawing.Size(60, 20);
@@ -587,6 +616,7 @@
             // 
             // textBox_Valor6
             // 
+            this.textBox_Valor6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor6.Location = new System.Drawing.Point(470, 373);
             this.textBox_Valor6.Name = "textBox_Valor6";
             this.textBox_Valor6.Size = new System.Drawing.Size(53, 20);
@@ -595,6 +625,7 @@
             // 
             // comboBox_Servico6
             // 
+            this.comboBox_Servico6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico6.FormattingEnabled = true;
             this.comboBox_Servico6.Items.AddRange(new object[] {
             "Recarga",
@@ -607,11 +638,11 @@
             // 
             // comboBox_Produto6
             // 
+            this.comboBox_Produto6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto6.FormattingEnabled = true;
             this.comboBox_Produto6.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto6.Location = new System.Drawing.Point(16, 371);
@@ -622,6 +653,7 @@
             // 
             // textBox_Baia5
             // 
+            this.textBox_Baia5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia5.Location = new System.Drawing.Point(529, 344);
             this.textBox_Baia5.Name = "textBox_Baia5";
             this.textBox_Baia5.Size = new System.Drawing.Size(34, 20);
@@ -630,6 +662,7 @@
             // 
             // textBox_Resultado5
             // 
+            this.textBox_Resultado5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado5.Location = new System.Drawing.Point(401, 344);
             this.textBox_Resultado5.Name = "textBox_Resultado5";
             this.textBox_Resultado5.Size = new System.Drawing.Size(63, 20);
@@ -637,6 +670,7 @@
             // 
             // textBox_PsEntrada5
             // 
+            this.textBox_PsEntrada5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada5.Location = new System.Drawing.Point(266, 342);
             this.textBox_PsEntrada5.Name = "textBox_PsEntrada5";
             this.textBox_PsEntrada5.Size = new System.Drawing.Size(65, 20);
@@ -644,6 +678,7 @@
             // 
             // textBox_PsSaida5
             // 
+            this.textBox_PsSaida5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida5.Location = new System.Drawing.Point(337, 343);
             this.textBox_PsSaida5.Name = "textBox_PsSaida5";
             this.textBox_PsSaida5.Size = new System.Drawing.Size(60, 20);
@@ -651,6 +686,7 @@
             // 
             // textBox_Valor5
             // 
+            this.textBox_Valor5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor5.Location = new System.Drawing.Point(470, 344);
             this.textBox_Valor5.Name = "textBox_Valor5";
             this.textBox_Valor5.Size = new System.Drawing.Size(53, 20);
@@ -659,6 +695,7 @@
             // 
             // comboBox_Servico5
             // 
+            this.comboBox_Servico5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico5.FormattingEnabled = true;
             this.comboBox_Servico5.Items.AddRange(new object[] {
             "Recarga",
@@ -670,11 +707,11 @@
             // 
             // comboBox_Produto5
             // 
+            this.comboBox_Produto5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto5.FormattingEnabled = true;
             this.comboBox_Produto5.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto5.Location = new System.Drawing.Point(16, 342);
@@ -684,6 +721,7 @@
             // 
             // textBox_Baia4
             // 
+            this.textBox_Baia4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia4.Location = new System.Drawing.Point(529, 314);
             this.textBox_Baia4.Name = "textBox_Baia4";
             this.textBox_Baia4.Size = new System.Drawing.Size(34, 20);
@@ -691,6 +729,7 @@
             // 
             // textBox_Resultado4
             // 
+            this.textBox_Resultado4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado4.Location = new System.Drawing.Point(401, 314);
             this.textBox_Resultado4.Name = "textBox_Resultado4";
             this.textBox_Resultado4.Size = new System.Drawing.Size(63, 20);
@@ -698,6 +737,7 @@
             // 
             // textBox_PsEntrada4
             // 
+            this.textBox_PsEntrada4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada4.Location = new System.Drawing.Point(266, 312);
             this.textBox_PsEntrada4.Name = "textBox_PsEntrada4";
             this.textBox_PsEntrada4.Size = new System.Drawing.Size(65, 20);
@@ -705,6 +745,7 @@
             // 
             // textBox_PsSaida4
             // 
+            this.textBox_PsSaida4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida4.Location = new System.Drawing.Point(337, 313);
             this.textBox_PsSaida4.Name = "textBox_PsSaida4";
             this.textBox_PsSaida4.Size = new System.Drawing.Size(60, 20);
@@ -712,6 +753,7 @@
             // 
             // textBox_Valor4
             // 
+            this.textBox_Valor4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor4.Location = new System.Drawing.Point(470, 314);
             this.textBox_Valor4.Name = "textBox_Valor4";
             this.textBox_Valor4.Size = new System.Drawing.Size(53, 20);
@@ -720,6 +762,7 @@
             // 
             // comboBox_Servico4
             // 
+            this.comboBox_Servico4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico4.FormattingEnabled = true;
             this.comboBox_Servico4.Items.AddRange(new object[] {
             "Recarga",
@@ -731,11 +774,11 @@
             // 
             // comboBox_Produto4
             // 
+            this.comboBox_Produto4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto4.FormattingEnabled = true;
             this.comboBox_Produto4.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto4.Location = new System.Drawing.Point(16, 312);
@@ -745,6 +788,7 @@
             // 
             // textBox_Baia3
             // 
+            this.textBox_Baia3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia3.Location = new System.Drawing.Point(529, 285);
             this.textBox_Baia3.Name = "textBox_Baia3";
             this.textBox_Baia3.Size = new System.Drawing.Size(34, 20);
@@ -752,6 +796,7 @@
             // 
             // textBox_Resultado3
             // 
+            this.textBox_Resultado3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado3.Location = new System.Drawing.Point(401, 285);
             this.textBox_Resultado3.Name = "textBox_Resultado3";
             this.textBox_Resultado3.Size = new System.Drawing.Size(63, 20);
@@ -759,6 +804,7 @@
             // 
             // textBox_PsEntrada3
             // 
+            this.textBox_PsEntrada3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada3.Location = new System.Drawing.Point(266, 283);
             this.textBox_PsEntrada3.Name = "textBox_PsEntrada3";
             this.textBox_PsEntrada3.Size = new System.Drawing.Size(65, 20);
@@ -766,6 +812,7 @@
             // 
             // textBox_PsSaida3
             // 
+            this.textBox_PsSaida3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida3.Location = new System.Drawing.Point(337, 284);
             this.textBox_PsSaida3.Name = "textBox_PsSaida3";
             this.textBox_PsSaida3.Size = new System.Drawing.Size(60, 20);
@@ -773,6 +820,7 @@
             // 
             // textBox_Valor3
             // 
+            this.textBox_Valor3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor3.Location = new System.Drawing.Point(470, 285);
             this.textBox_Valor3.Name = "textBox_Valor3";
             this.textBox_Valor3.Size = new System.Drawing.Size(53, 20);
@@ -781,6 +829,7 @@
             // 
             // comboBox_Servico3
             // 
+            this.comboBox_Servico3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico3.FormattingEnabled = true;
             this.comboBox_Servico3.Items.AddRange(new object[] {
             "Recarga",
@@ -792,11 +841,11 @@
             // 
             // comboBox_Produto3
             // 
+            this.comboBox_Produto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto3.FormattingEnabled = true;
             this.comboBox_Produto3.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto3.Location = new System.Drawing.Point(16, 283);
@@ -806,6 +855,7 @@
             // 
             // textBox_Baia2
             // 
+            this.textBox_Baia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia2.Location = new System.Drawing.Point(529, 254);
             this.textBox_Baia2.Name = "textBox_Baia2";
             this.textBox_Baia2.Size = new System.Drawing.Size(34, 20);
@@ -813,6 +863,7 @@
             // 
             // textBox_Resultado2
             // 
+            this.textBox_Resultado2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado2.Location = new System.Drawing.Point(401, 254);
             this.textBox_Resultado2.Name = "textBox_Resultado2";
             this.textBox_Resultado2.Size = new System.Drawing.Size(63, 20);
@@ -820,6 +871,7 @@
             // 
             // textBox_PsEntrada2
             // 
+            this.textBox_PsEntrada2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada2.Location = new System.Drawing.Point(266, 252);
             this.textBox_PsEntrada2.Name = "textBox_PsEntrada2";
             this.textBox_PsEntrada2.Size = new System.Drawing.Size(65, 20);
@@ -827,6 +879,7 @@
             // 
             // textBox_PsSaida2
             // 
+            this.textBox_PsSaida2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida2.Location = new System.Drawing.Point(337, 253);
             this.textBox_PsSaida2.Name = "textBox_PsSaida2";
             this.textBox_PsSaida2.Size = new System.Drawing.Size(60, 20);
@@ -834,6 +887,7 @@
             // 
             // textBox_Valor2
             // 
+            this.textBox_Valor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor2.Location = new System.Drawing.Point(470, 254);
             this.textBox_Valor2.Name = "textBox_Valor2";
             this.textBox_Valor2.Size = new System.Drawing.Size(53, 20);
@@ -842,6 +896,7 @@
             // 
             // comboBox_Servico2
             // 
+            this.comboBox_Servico2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico2.FormattingEnabled = true;
             this.comboBox_Servico2.Items.AddRange(new object[] {
             "Recarga",
@@ -853,11 +908,11 @@
             // 
             // comboBox_Produto2
             // 
+            this.comboBox_Produto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto2.FormattingEnabled = true;
             this.comboBox_Produto2.Items.AddRange(new object[] {
             "Cartucho",
             "Toner ",
-            "Venda",
             "Permuta ",
             "Reparo"});
             this.comboBox_Produto2.Location = new System.Drawing.Point(16, 252);
@@ -877,6 +932,7 @@
             // 
             // textBox_Baia1
             // 
+            this.textBox_Baia1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Baia1.Location = new System.Drawing.Point(529, 224);
             this.textBox_Baia1.Name = "textBox_Baia1";
             this.textBox_Baia1.Size = new System.Drawing.Size(34, 20);
@@ -884,6 +940,7 @@
             // 
             // textBox_Resultado1
             // 
+            this.textBox_Resultado1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Resultado1.Location = new System.Drawing.Point(401, 224);
             this.textBox_Resultado1.Name = "textBox_Resultado1";
             this.textBox_Resultado1.Size = new System.Drawing.Size(63, 20);
@@ -891,6 +948,7 @@
             // 
             // textBox_PsEntrada1
             // 
+            this.textBox_PsEntrada1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsEntrada1.Location = new System.Drawing.Point(266, 222);
             this.textBox_PsEntrada1.Name = "textBox_PsEntrada1";
             this.textBox_PsEntrada1.Size = new System.Drawing.Size(65, 20);
@@ -898,6 +956,7 @@
             // 
             // textBox_PsSaida1
             // 
+            this.textBox_PsSaida1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_PsSaida1.Location = new System.Drawing.Point(337, 223);
             this.textBox_PsSaida1.Name = "textBox_PsSaida1";
             this.textBox_PsSaida1.Size = new System.Drawing.Size(60, 20);
@@ -955,6 +1014,7 @@
             // 
             // textBox_Valor1
             // 
+            this.textBox_Valor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor1.Location = new System.Drawing.Point(470, 224);
             this.textBox_Valor1.Name = "textBox_Valor1";
             this.textBox_Valor1.Size = new System.Drawing.Size(53, 20);
@@ -963,6 +1023,7 @@
             // 
             // comboBox_Servico1
             // 
+            this.comboBox_Servico1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico1.FormattingEnabled = true;
             this.comboBox_Servico1.Items.AddRange(new object[] {
             "Recarga",
@@ -979,17 +1040,18 @@
             // 
             // comboBox_Produto1
             // 
+            this.comboBox_Produto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto1.FormattingEnabled = true;
             this.comboBox_Produto1.Items.AddRange(new object[] {
             "Cartucho",
             "Toner",
-            "Venda",
             "Permuta",
             "Reparo"});
             this.comboBox_Produto1.Location = new System.Drawing.Point(16, 222);
             this.comboBox_Produto1.Name = "comboBox_Produto1";
             this.comboBox_Produto1.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto1.TabIndex = 3;
+            this.comboBox_Produto1.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto1_SelectedIndexChanged);
             // 
             // groupBox4
             // 
@@ -1059,6 +1121,26 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "NOME  :";
             // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(16, 457);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(450, 28);
+            this.groupBox5.TabIndex = 89;
+            this.groupBox5.TabStop = false;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(341, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(100, 13);
+            this.label6.TabIndex = 89;
+            this.label6.Text = "VALOR TOTAL :";
+            // 
             // textBox_Pesquisa
             // 
             this.textBox_Pesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -1111,27 +1193,6 @@
             this.button_AlterarCaminho.Text = ". . . ";
             this.button_AlterarCaminho.UseVisualStyleBackColor = false;
             this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightCoral;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(470, 461);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(53, 22);
-            this.textBox1.TabIndex = 90;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox5.Controls.Add(this.label6);
-            this.groupBox5.Location = new System.Drawing.Point(16, 457);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(450, 28);
-            this.groupBox5.TabIndex = 89;
-            this.groupBox5.TabStop = false;
             // 
             // Form_Principal
             // 
@@ -1264,7 +1325,7 @@
         private System.Windows.Forms.Button button_Atualizar;
         private System.Windows.Forms.TextBox textBox_Caminho;
         private System.Windows.Forms.Button button_AlterarCaminho;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_ValorTotal;
         private System.Windows.Forms.GroupBox groupBox5;
     }
 }

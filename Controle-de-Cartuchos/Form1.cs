@@ -23,6 +23,10 @@ namespace Controle_de_Cartuchos
             InitializeComponent();
         }
 
+        public void Cartucho01()
+        {
+
+        }
         public void Limpar()
         {
             textBox_Nome.Text = string.Empty;
@@ -99,6 +103,15 @@ namespace Controle_de_Cartuchos
             textBox_Baia6.Text = string.Empty;
             textBox_Baia7.Text = string.Empty;
             textBox_Baia8.Text = string.Empty;
+
+            textBox_Valor1.Enabled = true;
+            textBox_Valor2.Enabled = true;
+            textBox_Valor3.Enabled = true;
+            textBox_Valor4.Enabled = true;
+            textBox_Valor5.Enabled = true;
+            textBox_Valor6.Enabled = true;
+            textBox_Valor7.Enabled = true;
+            textBox_Valor8.Enabled = true;
 
             textBox_Observacao.Text = string.Empty;
 
@@ -258,6 +271,8 @@ namespace Controle_de_Cartuchos
 
             float ValorTotal = float.Parse(Valor1) + float.Parse(Valor2) + float.Parse(Valor3) + float.Parse(Valor4) + float.Parse(Valor5) + float.Parse(Valor6) + float.Parse(Valor7) + float.Parse(Valor8);
 
+            textBox_ValorTotal.Text = Convert.ToString(ValorTotal)+",00";
+
             if (button_Processar.Text == "PROCESSAR")
             {
                 string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
@@ -409,26 +424,10 @@ namespace Controle_de_Cartuchos
 
                 dateTimePicker_Data.Text = dataGridView_Cartuchos[68, LinhaAtual].Value.ToString();
 
-                label_Valor_Total.Text = dataGridView_Cartuchos[69, LinhaAtual].Value.ToString();
-
                 button_Processar.Text = "SALVAR";
 
             }
             
-        }
-
-        private void comboBox_Servico1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
-                textBox_Valor1.Text = "15";
-            else if(comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
-                textBox_Valor1.Text = "85";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
-                textBox_Valor1.Text = "60";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
-                textBox_Valor1.Text = "70";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
-                textBox_Valor1.Text = "60";
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -517,6 +516,47 @@ namespace Controle_de_Cartuchos
                 BancoDeDados();
                 
             }
+        }
+
+        private void comboBox_Produto1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
+                textBox_Valor1.Text = "15";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
+                textBox_Valor1.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
+                textBox_Valor1.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
+                textBox_Valor1.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
+                textBox_Valor1.Text = "60";
+            else
+                textBox_Valor1.Text = "0";
+        }
+        private void comboBox_Servico1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
+                textBox_Valor1.Text = "15";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
+                textBox_Valor1.Text = "85";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
+                textBox_Valor1.Text = "60";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
+                textBox_Valor1.Text = "70";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
+                textBox_Valor1.Text = "60";
+            else
+                textBox_Valor1.Text = "0";
+        }
+
+        private void dataGridView_Visao_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_Visao_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
