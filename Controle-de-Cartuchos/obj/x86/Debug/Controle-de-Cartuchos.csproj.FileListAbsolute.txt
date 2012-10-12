@@ -37,3 +37,31 @@ C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-
 C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
 C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
 C:\Documents and Settings\Administrador\Desktop\Dropbox\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.exe
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.pdb
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\IFSP\Downloads\Repositorio\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.exe
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.pdb
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.pdb
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Repositorio\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe.config
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.exe
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.exe
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\bin\Debug\Controle-de-Cartuchos.pdb
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Form_Principal.resources
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle_de_Cartuchos.Properties.Resources.resources
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Controle-de-Cartuchos\Controle-de-Cartuchos\obj\x86\Debug\Controle-de-Cartuchos.pdb

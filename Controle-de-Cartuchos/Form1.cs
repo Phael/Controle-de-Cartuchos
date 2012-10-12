@@ -5,14 +5,17 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using System.Data;
 using System.Data.OleDb;
+
+using System.IO;
 
 namespace Controle_de_Cartuchos
 {
     public partial class Form_Principal : Form
     {
-        string CaminhoBancoDados = "C:/Documents and Settings/Administrador/Desktop/Dropbox/Repositorio/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
+        string CaminhoBancoDados = @"C:/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
         int LinhaAtual;
         string CodigoID;
 
@@ -132,7 +135,7 @@ namespace Controle_de_Cartuchos
                 dataGridView_Cartuchos.DataSource = Ds;
                 dataGridView_Cartuchos.DataMember = "Cartuchos";
 
-                OleDbDataAdapter Historico2 = new OleDbDataAdapter("SELECT OS, Nome, Data  FROM Cartuchos", Conexao);
+                OleDbDataAdapter Historico2 = new OleDbDataAdapter("SELECT OS, Nome, Data,Telefone  FROM Cartuchos", Conexao);
 
                 Historico2.Fill(Da, "Cartuchos");
 
@@ -145,6 +148,7 @@ namespace Controle_de_Cartuchos
         {
             BancoDeDados();
             textBox_Nome.Focus();
+            
         }
         
         private void button_Processar_Click(object sender, EventArgs e)
@@ -414,13 +418,12 @@ namespace Controle_de_Cartuchos
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string SqlCmd="";
-
-            if (textBox_Pesquisa.Text != "")
-                SqlCmd = "SELECT * FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
-
+            string SqlCmd_Visao = "";
             OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados);
 
             DataSet Ds = new DataSet();
+            DataSet Ds_Visao = new DataSet();
+
             try
             {
                 Conexao.Open();
@@ -430,16 +433,27 @@ namespace Controle_de_Cartuchos
                 MessageBox.Show(Erro.Message.ToString());
             }
 
+            if (textBox_Pesquisa.Text != "")
+            {
+                SqlCmd = "SELECT * FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
+                SqlCmd_Visao = "SELECT OS,Nome,Data,Telefone FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
+            }   
+
             if (Conexao.State == ConnectionState.Open)
             {
                 if (textBox_Pesquisa.Text != null && textBox_Pesquisa.Text != "")
                 {
                     OleDbDataAdapter Historico = new OleDbDataAdapter(SqlCmd, Conexao);
+                    OleDbDataAdapter Historico_Visao = new OleDbDataAdapter(SqlCmd_Visao, Conexao);
 
+                    Historico_Visao.Fill(Ds_Visao, "Cartuchos_Visao");
                     Historico.Fill(Ds, "Cartuchos");
 
-                    dataGridView_Visao.DataSource = Ds;
-                    dataGridView_Visao.DataMember = "Cartuchos";
+                    dataGridView_Visao.DataSource = Ds_Visao;
+                    dataGridView_Visao.DataMember = "Cartuchos_Visao";
+
+                    dataGridView_Cartuchos.DataSource = Ds;
+                    dataGridView_Cartuchos.DataMember = "Cartuchos";
                 }
                 else
                     BancoDeDados();
@@ -463,8 +477,28 @@ namespace Controle_de_Cartuchos
         {
             dataGridView_Visao.Update();
             dataGridView_Cartuchos.Update();
+            textBox_Pesquisa.Text = string.Empty;
         }
 
+        private void button_AlterarCaminho_Click(object sender, EventArgs e)
+        {
+            if (button_AlterarCaminho.Text != "OK")
+            {
+                if (MessageBox.Show("Altera Caminho ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    textBox_Caminho.Enabled = true;
+                    button_AlterarCaminho.Text = "OK";
 
+                    
+                }
+                    
+            }
+            else
+            {
+                button_AlterarCaminho.Text = ". . .";
+                textBox_Caminho.Enabled = false;
+            }
+
+        }
     }
 }

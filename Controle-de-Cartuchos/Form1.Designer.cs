@@ -122,7 +122,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Pesquisa = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Atualizar = new System.Windows.Forms.Button();
+            this.textBox_Caminho = new System.Windows.Forms.TextBox();
+            this.button_AlterarCaminho = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -1118,19 +1120,41 @@
             this.label13.TabIndex = 92;
             this.label13.Text = "CONSULTAR NOME :";
             // 
-            // button1
+            // button_Atualizar
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            this.button1.BackgroundImage = global::Controle_de_Cartuchos.Properties.Resources.atualizar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(394, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(30, 33);
-            this.button1.TabIndex = 91;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Atualizar.BackColor = System.Drawing.Color.Transparent;
+            this.button_Atualizar.BackgroundImage = global::Controle_de_Cartuchos.Properties.Resources.atualizar;
+            this.button_Atualizar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button_Atualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Atualizar.Location = new System.Drawing.Point(394, 10);
+            this.button_Atualizar.Name = "button_Atualizar";
+            this.button_Atualizar.Size = new System.Drawing.Size(30, 30);
+            this.button_Atualizar.TabIndex = 91;
+            this.button_Atualizar.UseVisualStyleBackColor = false;
+            this.button_Atualizar.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox_Caminho
+            // 
+            this.textBox_Caminho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Caminho.Enabled = false;
+            this.textBox_Caminho.Location = new System.Drawing.Point(12, 723);
+            this.textBox_Caminho.Name = "textBox_Caminho";
+            this.textBox_Caminho.Size = new System.Drawing.Size(221, 20);
+            this.textBox_Caminho.TabIndex = 91;
+            // 
+            // button_AlterarCaminho
+            // 
+            this.button_AlterarCaminho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.button_AlterarCaminho.BackColor = System.Drawing.Color.White;
+            this.button_AlterarCaminho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_AlterarCaminho.Location = new System.Drawing.Point(238, 724);
+            this.button_AlterarCaminho.Name = "button_AlterarCaminho";
+            this.button_AlterarCaminho.Size = new System.Drawing.Size(31, 20);
+            this.button_AlterarCaminho.TabIndex = 91;
+            this.button_AlterarCaminho.Text = ". . . ";
+            this.button_AlterarCaminho.UseVisualStyleBackColor = false;
+            this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
             // 
             // Form_Principal
             // 
@@ -1139,7 +1163,9 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
             this.ClientSize = new System.Drawing.Size(1016, 751);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_AlterarCaminho);
+            this.Controls.Add(this.textBox_Caminho);
+            this.Controls.Add(this.button_Atualizar);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.textBox_Pesquisa);
             this.Controls.Add(this.groupBox2);
@@ -1256,7 +1282,9 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView_Visao;
         private System.Windows.Forms.Button button_Novo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Atualizar;
+        private System.Windows.Forms.TextBox textBox_Caminho;
+        private System.Windows.Forms.Button button_AlterarCaminho;
     }
 }
 
