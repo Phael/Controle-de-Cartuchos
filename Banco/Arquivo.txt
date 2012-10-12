@@ -1,4 +1,4 @@
-" C:/Controle-de-Cartuchos/Banco/Cartuchos.mdb "
+" C:/Controle-de-Cartuchos/Banco/Cartuchos.mdb"
 
 
 

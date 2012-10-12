@@ -34,7 +34,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.button_Novo = new System.Windows.Forms.Button();
             this.button_Excluir = new System.Windows.Forms.Button();
-            this.label_Valor_Total = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox_Nome = new System.Windows.Forms.TextBox();
             this.textBox_Identificacao8 = new System.Windows.Forms.TextBox();
@@ -125,12 +124,15 @@
             this.button_Atualizar = new System.Windows.Forms.Button();
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -175,10 +177,9 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.textBox1);
             this.groupBox2.Controls.Add(this.button_Novo);
             this.groupBox2.Controls.Add(this.button_Excluir);
-            this.groupBox2.Controls.Add(this.label_Valor_Total);
-            this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.textBox_Nome);
             this.groupBox2.Controls.Add(this.textBox_Identificacao8);
             this.groupBox2.Controls.Add(this.textBox_Identificacao7);
@@ -261,6 +262,7 @@
             this.groupBox2.Controls.Add(this.textBox_Telefone);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Controls.Add(this.groupBox5);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(432, 6);
             this.groupBox2.Name = "groupBox2";
@@ -275,7 +277,7 @@
             this.button_Novo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Novo.BackColor = System.Drawing.Color.White;
             this.button_Novo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Novo.Location = new System.Drawing.Point(119, 669);
+            this.button_Novo.Location = new System.Drawing.Point(123, 669);
             this.button_Novo.Name = "button_Novo";
             this.button_Novo.Size = new System.Drawing.Size(100, 30);
             this.button_Novo.TabIndex = 72;
@@ -285,7 +287,7 @@
             // 
             // button_Excluir
             // 
-            this.button_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Excluir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Excluir.BackColor = System.Drawing.Color.White;
             this.button_Excluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Excluir.Location = new System.Drawing.Point(464, 669);
@@ -295,22 +297,11 @@
             this.button_Excluir.Text = "EXCLUIR";
             this.button_Excluir.UseVisualStyleBackColor = false;
             // 
-            // label_Valor_Total
-            // 
-            this.label_Valor_Total.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_Valor_Total.AutoSize = true;
-            this.label_Valor_Total.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Valor_Total.Location = new System.Drawing.Point(472, 467);
-            this.label_Valor_Total.Name = "label_Valor_Total";
-            this.label_Valor_Total.Size = new System.Drawing.Size(21, 15);
-            this.label_Valor_Total.TabIndex = 90;
-            this.label_Valor_Total.Text = "VT";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(364, 467);
+            this.label6.Location = new System.Drawing.Point(341, 10);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(100, 13);
             this.label6.TabIndex = 89;
@@ -318,8 +309,6 @@
             // 
             // textBox_Nome
             // 
-            this.textBox_Nome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Nome.Location = new System.Drawing.Point(91, 126);
             this.textBox_Nome.Name = "textBox_Nome";
             this.textBox_Nome.Size = new System.Drawing.Size(306, 20);
@@ -403,17 +392,17 @@
             // 
             // textBox_Observacao
             // 
-            this.textBox_Observacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox_Observacao.Location = new System.Drawing.Point(17, 536);
+            this.textBox_Observacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)));
+            this.textBox_Observacao.Location = new System.Drawing.Point(17, 537);
             this.textBox_Observacao.Multiline = true;
             this.textBox_Observacao.Name = "textBox_Observacao";
-            this.textBox_Observacao.Size = new System.Drawing.Size(547, 73);
+            this.textBox_Observacao.Size = new System.Drawing.Size(547, 92);
             this.textBox_Observacao.TabIndex = 68;
             // 
             // button_Imprimir
             // 
-            this.button_Imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button_Imprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Imprimir.BackColor = System.Drawing.Color.White;
             this.button_Imprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Imprimir.Location = new System.Drawing.Point(359, 669);
@@ -428,7 +417,7 @@
             this.button_Processar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_Processar.BackColor = System.Drawing.Color.White;
             this.button_Processar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Processar.Location = new System.Drawing.Point(13, 669);
+            this.button_Processar.Location = new System.Drawing.Point(17, 669);
             this.button_Processar.Name = "button_Processar";
             this.button_Processar.Size = new System.Drawing.Size(100, 30);
             this.button_Processar.TabIndex = 69;
@@ -438,10 +427,9 @@
             // 
             // label11
             // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(14, 520);
+            this.label11.Location = new System.Drawing.Point(15, 507);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 73;
@@ -449,7 +437,6 @@
             // 
             // textBox_Baia8
             // 
-            this.textBox_Baia8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia8.Location = new System.Drawing.Point(529, 431);
             this.textBox_Baia8.Name = "textBox_Baia8";
             this.textBox_Baia8.Size = new System.Drawing.Size(34, 20);
@@ -457,7 +444,6 @@
             // 
             // textBox_Resultado8
             // 
-            this.textBox_Resultado8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado8.Location = new System.Drawing.Point(401, 431);
             this.textBox_Resultado8.Name = "textBox_Resultado8";
             this.textBox_Resultado8.Size = new System.Drawing.Size(63, 20);
@@ -479,7 +465,6 @@
             // 
             // textBox_Valor8
             // 
-            this.textBox_Valor8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor8.Location = new System.Drawing.Point(470, 431);
             this.textBox_Valor8.Name = "textBox_Valor8";
             this.textBox_Valor8.Size = new System.Drawing.Size(53, 20);
@@ -513,7 +498,6 @@
             // 
             // textBox_Baia7
             // 
-            this.textBox_Baia7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia7.Location = new System.Drawing.Point(529, 402);
             this.textBox_Baia7.Name = "textBox_Baia7";
             this.textBox_Baia7.Size = new System.Drawing.Size(34, 20);
@@ -521,7 +505,6 @@
             // 
             // textBox_Resultado7
             // 
-            this.textBox_Resultado7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado7.Location = new System.Drawing.Point(401, 402);
             this.textBox_Resultado7.Name = "textBox_Resultado7";
             this.textBox_Resultado7.Size = new System.Drawing.Size(63, 20);
@@ -543,7 +526,6 @@
             // 
             // textBox_Valor7
             // 
-            this.textBox_Valor7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor7.Location = new System.Drawing.Point(470, 402);
             this.textBox_Valor7.Name = "textBox_Valor7";
             this.textBox_Valor7.Size = new System.Drawing.Size(53, 20);
@@ -577,7 +559,6 @@
             // 
             // textBox_Baia6
             // 
-            this.textBox_Baia6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia6.Location = new System.Drawing.Point(529, 373);
             this.textBox_Baia6.Name = "textBox_Baia6";
             this.textBox_Baia6.Size = new System.Drawing.Size(34, 20);
@@ -585,7 +566,6 @@
             // 
             // textBox_Resultado6
             // 
-            this.textBox_Resultado6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado6.Location = new System.Drawing.Point(401, 373);
             this.textBox_Resultado6.Name = "textBox_Resultado6";
             this.textBox_Resultado6.Size = new System.Drawing.Size(63, 20);
@@ -607,7 +587,6 @@
             // 
             // textBox_Valor6
             // 
-            this.textBox_Valor6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor6.Location = new System.Drawing.Point(470, 373);
             this.textBox_Valor6.Name = "textBox_Valor6";
             this.textBox_Valor6.Size = new System.Drawing.Size(53, 20);
@@ -643,7 +622,6 @@
             // 
             // textBox_Baia5
             // 
-            this.textBox_Baia5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia5.Location = new System.Drawing.Point(529, 344);
             this.textBox_Baia5.Name = "textBox_Baia5";
             this.textBox_Baia5.Size = new System.Drawing.Size(34, 20);
@@ -652,7 +630,6 @@
             // 
             // textBox_Resultado5
             // 
-            this.textBox_Resultado5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado5.Location = new System.Drawing.Point(401, 344);
             this.textBox_Resultado5.Name = "textBox_Resultado5";
             this.textBox_Resultado5.Size = new System.Drawing.Size(63, 20);
@@ -674,7 +651,6 @@
             // 
             // textBox_Valor5
             // 
-            this.textBox_Valor5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor5.Location = new System.Drawing.Point(470, 344);
             this.textBox_Valor5.Name = "textBox_Valor5";
             this.textBox_Valor5.Size = new System.Drawing.Size(53, 20);
@@ -708,7 +684,6 @@
             // 
             // textBox_Baia4
             // 
-            this.textBox_Baia4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia4.Location = new System.Drawing.Point(529, 314);
             this.textBox_Baia4.Name = "textBox_Baia4";
             this.textBox_Baia4.Size = new System.Drawing.Size(34, 20);
@@ -716,7 +691,6 @@
             // 
             // textBox_Resultado4
             // 
-            this.textBox_Resultado4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado4.Location = new System.Drawing.Point(401, 314);
             this.textBox_Resultado4.Name = "textBox_Resultado4";
             this.textBox_Resultado4.Size = new System.Drawing.Size(63, 20);
@@ -738,7 +712,6 @@
             // 
             // textBox_Valor4
             // 
-            this.textBox_Valor4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor4.Location = new System.Drawing.Point(470, 314);
             this.textBox_Valor4.Name = "textBox_Valor4";
             this.textBox_Valor4.Size = new System.Drawing.Size(53, 20);
@@ -772,7 +745,6 @@
             // 
             // textBox_Baia3
             // 
-            this.textBox_Baia3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia3.Location = new System.Drawing.Point(529, 285);
             this.textBox_Baia3.Name = "textBox_Baia3";
             this.textBox_Baia3.Size = new System.Drawing.Size(34, 20);
@@ -780,7 +752,6 @@
             // 
             // textBox_Resultado3
             // 
-            this.textBox_Resultado3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado3.Location = new System.Drawing.Point(401, 285);
             this.textBox_Resultado3.Name = "textBox_Resultado3";
             this.textBox_Resultado3.Size = new System.Drawing.Size(63, 20);
@@ -802,7 +773,6 @@
             // 
             // textBox_Valor3
             // 
-            this.textBox_Valor3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor3.Location = new System.Drawing.Point(470, 285);
             this.textBox_Valor3.Name = "textBox_Valor3";
             this.textBox_Valor3.Size = new System.Drawing.Size(53, 20);
@@ -836,7 +806,6 @@
             // 
             // textBox_Baia2
             // 
-            this.textBox_Baia2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia2.Location = new System.Drawing.Point(529, 254);
             this.textBox_Baia2.Name = "textBox_Baia2";
             this.textBox_Baia2.Size = new System.Drawing.Size(34, 20);
@@ -844,7 +813,6 @@
             // 
             // textBox_Resultado2
             // 
-            this.textBox_Resultado2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado2.Location = new System.Drawing.Point(401, 254);
             this.textBox_Resultado2.Name = "textBox_Resultado2";
             this.textBox_Resultado2.Size = new System.Drawing.Size(63, 20);
@@ -866,7 +834,6 @@
             // 
             // textBox_Valor2
             // 
-            this.textBox_Valor2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor2.Location = new System.Drawing.Point(470, 254);
             this.textBox_Valor2.Name = "textBox_Valor2";
             this.textBox_Valor2.Size = new System.Drawing.Size(53, 20);
@@ -900,7 +867,6 @@
             // 
             // label10
             // 
-            this.label10.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(528, 206);
@@ -911,7 +877,6 @@
             // 
             // textBox_Baia1
             // 
-            this.textBox_Baia1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Baia1.Location = new System.Drawing.Point(529, 224);
             this.textBox_Baia1.Name = "textBox_Baia1";
             this.textBox_Baia1.Size = new System.Drawing.Size(34, 20);
@@ -919,7 +884,6 @@
             // 
             // textBox_Resultado1
             // 
-            this.textBox_Resultado1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Resultado1.Location = new System.Drawing.Point(401, 224);
             this.textBox_Resultado1.Name = "textBox_Resultado1";
             this.textBox_Resultado1.Size = new System.Drawing.Size(63, 20);
@@ -941,7 +905,6 @@
             // 
             // label9
             // 
-            this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(473, 206);
@@ -952,7 +915,6 @@
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(406, 206);
@@ -993,7 +955,6 @@
             // 
             // textBox_Valor1
             // 
-            this.textBox_Valor1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Valor1.Location = new System.Drawing.Point(470, 224);
             this.textBox_Valor1.Name = "textBox_Valor1";
             this.textBox_Valor1.Size = new System.Drawing.Size(53, 20);
@@ -1032,7 +993,6 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox4.BackColor = System.Drawing.Color.Transparent;
             this.groupBox4.Controls.Add(this.dateTimePicker_Data);
             this.groupBox4.Location = new System.Drawing.Point(409, 24);
@@ -1044,7 +1004,6 @@
             // 
             // dateTimePicker_Data
             // 
-            this.dateTimePicker_Data.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker_Data.Location = new System.Drawing.Point(32, 28);
@@ -1075,8 +1034,6 @@
             // 
             // textBox_Telefone
             // 
-            this.textBox_Telefone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
             this.textBox_Telefone.Name = "textBox_Telefone";
             this.textBox_Telefone.Size = new System.Drawing.Size(306, 20);
@@ -1135,12 +1092,11 @@
             // 
             // textBox_Caminho
             // 
-            this.textBox_Caminho.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox_Caminho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox_Caminho.Enabled = false;
-            this.textBox_Caminho.Location = new System.Drawing.Point(12, 723);
+            this.textBox_Caminho.Location = new System.Drawing.Point(10, 723);
             this.textBox_Caminho.Name = "textBox_Caminho";
-            this.textBox_Caminho.Size = new System.Drawing.Size(221, 20);
+            this.textBox_Caminho.Size = new System.Drawing.Size(374, 20);
             this.textBox_Caminho.TabIndex = 91;
             // 
             // button_AlterarCaminho
@@ -1148,13 +1104,34 @@
             this.button_AlterarCaminho.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.button_AlterarCaminho.BackColor = System.Drawing.Color.White;
             this.button_AlterarCaminho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_AlterarCaminho.Location = new System.Drawing.Point(238, 724);
+            this.button_AlterarCaminho.Location = new System.Drawing.Point(392, 723);
             this.button_AlterarCaminho.Name = "button_AlterarCaminho";
             this.button_AlterarCaminho.Size = new System.Drawing.Size(31, 20);
             this.button_AlterarCaminho.TabIndex = 91;
             this.button_AlterarCaminho.Text = ". . . ";
             this.button_AlterarCaminho.UseVisualStyleBackColor = false;
             this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightCoral;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(470, 461);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(53, 22);
+            this.textBox1.TabIndex = 90;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox5.Controls.Add(this.label6);
+            this.groupBox5.Location = new System.Drawing.Point(16, 457);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(450, 28);
+            this.groupBox5.TabIndex = 89;
+            this.groupBox5.TabStop = false;
             // 
             // Form_Principal
             // 
@@ -1170,6 +1147,7 @@
             this.Controls.Add(this.textBox_Pesquisa);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.Name = "Form_Principal";
             this.Text = "Controle de Cartuchos 1.0";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1181,6 +1159,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1276,7 +1256,6 @@
         private System.Windows.Forms.TextBox textBox_Nome;
         private System.Windows.Forms.Label label_Os;
         private System.Windows.Forms.Button button_Excluir;
-        private System.Windows.Forms.Label label_Valor_Total;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox_Pesquisa;
         private System.Windows.Forms.Label label13;
@@ -1285,6 +1264,8 @@
         private System.Windows.Forms.Button button_Atualizar;
         private System.Windows.Forms.TextBox textBox_Caminho;
         private System.Windows.Forms.Button button_AlterarCaminho;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.GroupBox groupBox5;
     }
 }
 

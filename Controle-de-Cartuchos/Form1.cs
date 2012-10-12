@@ -256,11 +256,8 @@ namespace Controle_de_Cartuchos
 
             string Data = dateTimePicker_Data.Value.ToShortDateString();
 
-            string ValorTotal = label_Valor_Total.Text;/*float.Parse(Valor1) + float.Parse(Valor2) + float.Parse(Valor3) + float.Parse(Valor4) + float.Parse(Valor5) + float.Parse(Valor6) + float.Parse(Valor7) + float.Parse(Valor8);*/
+            float ValorTotal = float.Parse(Valor1) + float.Parse(Valor2) + float.Parse(Valor3) + float.Parse(Valor4) + float.Parse(Valor5) + float.Parse(Valor6) + float.Parse(Valor7) + float.Parse(Valor8);
 
-            //label_Valor_Total.Text = Convert.ToString(ValorTotal);
-
-            //string ValorTotalBd = Convert.ToString(ValorTotal);
             if (button_Processar.Text == "PROCESSAR")
             {
                 string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
@@ -493,7 +490,6 @@ namespace Controle_de_Cartuchos
 
         private void button_Novo_Click(object sender, EventArgs e)
         {
-
             Limpar();
         }
 
@@ -501,34 +497,26 @@ namespace Controle_de_Cartuchos
         {
             dataGridView_Visao.Update();
             dataGridView_Cartuchos.Update();
+            BancoDeDados();
             textBox_Pesquisa.Text = string.Empty;
         }
 
         private void button_AlterarCaminho_Click(object sender, EventArgs e)
         {
-            if (button_AlterarCaminho.Text != "OK")
+            if (MessageBox.Show("Altera Caminho ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (MessageBox.Show("Altera Caminho ?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                try
                 {
-                    textBox_Caminho.Enabled = true;
-                    button_AlterarCaminho.Text = "OK";
-
-                    try
-                    {
-                        System.Diagnostics.Process.Start(@"C:\Controle-de-cartuchos\Banco\Arquivo.txt");
-                    }
-                    catch (Exception Erro)
-                    {
-                        MessageBox.Show("Erro" + Erro);
-                    }
+                    System.Diagnostics.Process.Start(@"C:\Controle-de-cartuchos\Banco\Arquivo.txt");
                 }
+                catch (Exception Erro)
+                {
+                    MessageBox.Show("Erro" + Erro);
+                }
+                CaminhoBancoDados();
+                BancoDeDados();
+                
             }
-            else
-            {
-                button_AlterarCaminho.Text = ". . .";
-                textBox_Caminho.Enabled = false;
-            }
-
         }
     }
 }
