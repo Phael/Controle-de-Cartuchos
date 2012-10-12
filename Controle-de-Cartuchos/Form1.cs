@@ -15,7 +15,6 @@ namespace Controle_de_Cartuchos
 {
     public partial class Form_Principal : Form
     {
-        string CaminhoBancoDados = @"C:/Controle-de-Cartuchos/Banco/Cartuchos.mdb";
         int LinhaAtual;
         string CodigoID;
 
@@ -109,14 +108,38 @@ namespace Controle_de_Cartuchos
 
             textBox_Nome.Focus();
         }
+        public string CaminhoBancoDados()
+        {
+            //Abre o Arquivo que contem o Banco de Dados
+            TextReader Arquivo = File.OpenText(@"C:\Controle-de-Cartuchos\Banco\Arquivo.txt");
+            string Caminho = Arquivo.ReadLine();
+            string CaminhoBanco;
+
+            //Remove as aspas duplas da string 
+            int indice = Caminho.Count();
+            string Palavra = "";
+
+            for (int I = 0; I < indice; ++I)
+            {
+                if (Caminho[I] != '\"')
+                {
+                    Palavra = Palavra + Caminho[I];
+                }
+            }
+            textBox_Caminho.Text = Palavra;
+            CaminhoBanco = textBox_Caminho.Text;
+            Arquivo.Close();
+
+            return CaminhoBanco;
+        }
         public void BancoDeDados()
         {
-            
-
-            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados);
+            //Cria conexao com o banco de dados
+            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados());
             DataSet Ds = new DataSet();
             DataSet Da = new DataSet();
-
+     
+            //Verifica se o banco de dados foi aberto
             try
             {
                 Conexao.Open();
@@ -135,12 +158,13 @@ namespace Controle_de_Cartuchos
                 dataGridView_Cartuchos.DataSource = Ds;
                 dataGridView_Cartuchos.DataMember = "Cartuchos";
 
-                OleDbDataAdapter Historico2 = new OleDbDataAdapter("SELECT OS, Nome, Data,Telefone  FROM Cartuchos", Conexao);
+                OleDbDataAdapter Historico_Visao = new OleDbDataAdapter("SELECT OS, Nome, Data,Telefone  FROM Cartuchos", Conexao);
 
-                Historico2.Fill(Da, "Cartuchos");
+                Historico_Visao.Fill(Da, "Cartuchos");
 
                 dataGridView_Visao.DataSource = Da;
                 dataGridView_Visao.DataMember = "Cartuchos";
+
             }
         }
 
@@ -148,11 +172,11 @@ namespace Controle_de_Cartuchos
         {
             BancoDeDados();
             textBox_Nome.Focus();
-            
         }
         
         private void button_Processar_Click(object sender, EventArgs e)
         {
+            //Passa todos os dados para sua determinadas strings
             string Nome = textBox_Nome.Text;
             string Telefone = textBox_Telefone.Text;
 
@@ -239,7 +263,7 @@ namespace Controle_de_Cartuchos
             //string ValorTotalBd = Convert.ToString(ValorTotal);
             if (button_Processar.Text == "PROCESSAR")
             {
-                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados;
+                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
                 string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "')";
 
 
@@ -272,7 +296,7 @@ namespace Controle_de_Cartuchos
             }
             else
             {
-                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados;
+                string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
                 CodigoID = dataGridView_Cartuchos[0, LinhaAtual].Value.ToString(); 
 
                 string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data = '" + Data + "' WHERE OS= " + int.Parse(CodigoID) + "";
@@ -419,7 +443,7 @@ namespace Controle_de_Cartuchos
         {
             string SqlCmd="";
             string SqlCmd_Visao = "";
-            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados);
+            OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados());
 
             DataSet Ds = new DataSet();
             DataSet Ds_Visao = new DataSet();
@@ -489,9 +513,15 @@ namespace Controle_de_Cartuchos
                     textBox_Caminho.Enabled = true;
                     button_AlterarCaminho.Text = "OK";
 
-                    
+                    try
+                    {
+                        System.Diagnostics.Process.Start(@"C:\Controle-de-cartuchos\Banco\Arquivo.txt");
+                    }
+                    catch (Exception Erro)
+                    {
+                        MessageBox.Show("Erro" + Erro);
+                    }
                 }
-                    
             }
             else
             {

@@ -1,0 +1,5 @@
+" C:/Controle-de-Cartuchos/Banco/Cartuchos.mdb "
+
+
+
+....:::: MANTENHA AS ASPAS DUPLAS NO INICIO E NO FINAL DO CAMINHO ::::....
