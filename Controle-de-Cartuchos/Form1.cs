@@ -313,6 +313,8 @@ namespace Controle_de_Cartuchos
         {
             BancoDeDados();
             textBox_Nome.Focus();
+            int GridMax = dataGridView_Cartuchos.RowCount;
+            label_Os.Text = Convert.ToString(GridMax);
         }
         
         private void button_Processar_Click(object sender, EventArgs e)
@@ -616,7 +618,9 @@ namespace Controle_de_Cartuchos
 
         private void button_Novo_Click(object sender, EventArgs e)
         {
+            int GridMax = dataGridView_Cartuchos.RowCount;
             Limpar();
+            label_Os.Text = Convert.ToString(GridMax);
         }
 
         private void button1_Click(object sender, EventArgs e)
