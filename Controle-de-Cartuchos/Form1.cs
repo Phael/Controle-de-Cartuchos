@@ -252,7 +252,7 @@ namespace Controle_de_Cartuchos
         public string CaminhoBancoDados()
         {
             //Abre o Arquivo que contem o Banco de Dados
-            TextReader Arquivo = File.OpenText(@"C:\Controle-de-Cartuchos\Banco\Arquivo.txt");
+            TextReader Arquivo = File.OpenText(@"C:\Controle-de-Cartuchos\Controle-de-Cartuchos\ArqID.txt");
             string Caminho = Arquivo.ReadLine();
             string CaminhoBanco;
 
@@ -637,7 +637,7 @@ namespace Controle_de_Cartuchos
             {
                 try
                 {
-                    System.Diagnostics.Process.Start(@"C:\Controle-de-cartuchos\Banco\Arquivo.txt");
+                    System.Diagnostics.Process.Start(@"C:\Controle-de-Cartuchos\Controle-de-Cartuchos\ArqID.txt");
                 }
                 catch (Exception Erro)
                 {
