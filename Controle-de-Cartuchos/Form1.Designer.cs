@@ -32,6 +32,9 @@
             this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
+            this.label_Encerrada = new System.Windows.Forms.Label();
+            this.comboBox_Encerrada = new System.Windows.Forms.ComboBox();
             this.textBox_ValorTotal = new System.Windows.Forms.TextBox();
             this.button_Novo = new System.Windows.Forms.Button();
             this.button_Excluir = new System.Windows.Forms.Button();
@@ -104,7 +107,7 @@
             this.textBox_Resultado1 = new System.Windows.Forms.TextBox();
             this.textBox_PsEntrada1 = new System.Windows.Forms.TextBox();
             this.textBox_PsSaida1 = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
+            this.label_Valor = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -125,9 +128,6 @@
             this.button_Atualizar = new System.Windows.Forms.Button();
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
-            this.label_Encerrada = new System.Windows.Forms.Label();
-            this.comboBox_Encerrada = new System.Windows.Forms.ComboBox();
-            this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -176,7 +176,6 @@
             this.dataGridView_Cartuchos.Size = new System.Drawing.Size(412, 661);
             this.dataGridView_Cartuchos.TabIndex = 0;
             this.dataGridView_Cartuchos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
-            this.dataGridView_Cartuchos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_CellContentClick);
             // 
             // groupBox2
             // 
@@ -258,7 +257,7 @@
             this.groupBox2.Controls.Add(this.textBox_Resultado1);
             this.groupBox2.Controls.Add(this.textBox_PsEntrada1);
             this.groupBox2.Controls.Add(this.textBox_PsSaida1);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.label_Valor);
             this.groupBox2.Controls.Add(this.label8);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.label5);
@@ -278,7 +277,37 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CADASTRO";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // textBox_Telefone
+            // 
+            this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
+            this.textBox_Telefone.Mask = "(99) 0000-0000";
+            this.textBox_Telefone.Name = "textBox_Telefone";
+            this.textBox_Telefone.Size = new System.Drawing.Size(306, 20);
+            this.textBox_Telefone.TabIndex = 2;
+            // 
+            // label_Encerrada
+            // 
+            this.label_Encerrada.AutoSize = true;
+            this.label_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Encerrada.Location = new System.Drawing.Point(377, 507);
+            this.label_Encerrada.Name = "label_Encerrada";
+            this.label_Encerrada.Size = new System.Drawing.Size(80, 13);
+            this.label_Encerrada.TabIndex = 92;
+            this.label_Encerrada.Text = "ENCERRADA :";
+            // 
+            // comboBox_Encerrada
+            // 
+            this.comboBox_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox_Encerrada.FormattingEnabled = true;
+            this.comboBox_Encerrada.Items.AddRange(new object[] {
+            "Sim",
+            "Nao"});
+            this.comboBox_Encerrada.Location = new System.Drawing.Point(470, 499);
+            this.comboBox_Encerrada.Name = "comboBox_Encerrada";
+            this.comboBox_Encerrada.Size = new System.Drawing.Size(60, 21);
+            this.comboBox_Encerrada.TabIndex = 91;
+            this.comboBox_Encerrada.Text = "Nao";
             // 
             // textBox_ValorTotal
             // 
@@ -505,6 +534,7 @@
             this.comboBox_Servico8.Name = "comboBox_Servico8";
             this.comboBox_Servico8.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico8.TabIndex = 61;
+            this.comboBox_Servico8.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico8_SelectedIndexChanged);
             // 
             // comboBox_Produto8
             // 
@@ -519,6 +549,7 @@
             this.comboBox_Produto8.Name = "comboBox_Produto8";
             this.comboBox_Produto8.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto8.TabIndex = 60;
+            this.comboBox_Produto8.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto8_SelectedIndexChanged);
             // 
             // textBox_Baia7
             // 
@@ -572,6 +603,7 @@
             this.comboBox_Servico7.Name = "comboBox_Servico7";
             this.comboBox_Servico7.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico7.TabIndex = 53;
+            this.comboBox_Servico7.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico7_SelectedIndexChanged);
             // 
             // comboBox_Produto7
             // 
@@ -586,6 +618,7 @@
             this.comboBox_Produto7.Name = "comboBox_Produto7";
             this.comboBox_Produto7.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto7.TabIndex = 52;
+            this.comboBox_Produto7.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto7_SelectedIndexChanged);
             // 
             // textBox_Baia6
             // 
@@ -640,6 +673,7 @@
             this.comboBox_Servico6.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico6.TabIndex = 52;
             this.comboBox_Servico6.Tag = "45";
+            this.comboBox_Servico6.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico6_SelectedIndexChanged);
             // 
             // comboBox_Produto6
             // 
@@ -655,6 +689,7 @@
             this.comboBox_Produto6.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto6.TabIndex = 51;
             this.comboBox_Produto6.Tag = "44";
+            this.comboBox_Produto6.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto6_SelectedIndexChanged);
             // 
             // textBox_Baia5
             // 
@@ -709,6 +744,7 @@
             this.comboBox_Servico5.Name = "comboBox_Servico5";
             this.comboBox_Servico5.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico5.TabIndex = 36;
+            this.comboBox_Servico5.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico5_SelectedIndexChanged);
             // 
             // comboBox_Produto5
             // 
@@ -723,6 +759,7 @@
             this.comboBox_Produto5.Name = "comboBox_Produto5";
             this.comboBox_Produto5.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto5.TabIndex = 35;
+            this.comboBox_Produto5.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto5_SelectedIndexChanged);
             // 
             // textBox_Baia4
             // 
@@ -776,6 +813,7 @@
             this.comboBox_Servico4.Name = "comboBox_Servico4";
             this.comboBox_Servico4.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico4.TabIndex = 28;
+            this.comboBox_Servico4.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico4_SelectedIndexChanged);
             // 
             // comboBox_Produto4
             // 
@@ -790,6 +828,7 @@
             this.comboBox_Produto4.Name = "comboBox_Produto4";
             this.comboBox_Produto4.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto4.TabIndex = 27;
+            this.comboBox_Produto4.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto4_SelectedIndexChanged);
             // 
             // textBox_Baia3
             // 
@@ -843,6 +882,7 @@
             this.comboBox_Servico3.Name = "comboBox_Servico3";
             this.comboBox_Servico3.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico3.TabIndex = 20;
+            this.comboBox_Servico3.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico3_SelectedIndexChanged);
             // 
             // comboBox_Produto3
             // 
@@ -857,6 +897,7 @@
             this.comboBox_Produto3.Name = "comboBox_Produto3";
             this.comboBox_Produto3.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto3.TabIndex = 19;
+            this.comboBox_Produto3.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto3_SelectedIndexChanged);
             // 
             // textBox_Baia2
             // 
@@ -910,6 +951,7 @@
             this.comboBox_Servico2.Name = "comboBox_Servico2";
             this.comboBox_Servico2.Size = new System.Drawing.Size(96, 21);
             this.comboBox_Servico2.TabIndex = 12;
+            this.comboBox_Servico2.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico2_SelectedIndexChanged);
             // 
             // comboBox_Produto2
             // 
@@ -924,6 +966,7 @@
             this.comboBox_Produto2.Name = "comboBox_Produto2";
             this.comboBox_Produto2.Size = new System.Drawing.Size(68, 21);
             this.comboBox_Produto2.TabIndex = 11;
+            this.comboBox_Produto2.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto2_SelectedIndexChanged);
             // 
             // label10
             // 
@@ -967,15 +1010,15 @@
             this.textBox_PsSaida1.Size = new System.Drawing.Size(60, 20);
             this.textBox_PsSaida1.TabIndex = 7;
             // 
-            // label9
+            // label_Valor
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(473, 206);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(43, 13);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "VALOR";
+            this.label_Valor.AutoSize = true;
+            this.label_Valor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Valor.Location = new System.Drawing.Point(473, 206);
+            this.label_Valor.Name = "label_Valor";
+            this.label_Valor.Size = new System.Drawing.Size(43, 13);
+            this.label_Valor.TabIndex = 17;
+            this.label_Valor.Text = "VALOR";
             // 
             // label8
             // 
@@ -1192,37 +1235,6 @@
             this.button_AlterarCaminho.UseVisualStyleBackColor = false;
             this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
             // 
-            // label_Encerrada
-            // 
-            this.label_Encerrada.AutoSize = true;
-            this.label_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_Encerrada.Location = new System.Drawing.Point(377, 507);
-            this.label_Encerrada.Name = "label_Encerrada";
-            this.label_Encerrada.Size = new System.Drawing.Size(80, 13);
-            this.label_Encerrada.TabIndex = 92;
-            this.label_Encerrada.Text = "ENCERRADA :";
-            // 
-            // comboBox_Encerrada
-            // 
-            this.comboBox_Encerrada.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox_Encerrada.FormattingEnabled = true;
-            this.comboBox_Encerrada.Items.AddRange(new object[] {
-            "Sim",
-            "Nao"});
-            this.comboBox_Encerrada.Location = new System.Drawing.Point(470, 499);
-            this.comboBox_Encerrada.Name = "comboBox_Encerrada";
-            this.comboBox_Encerrada.Size = new System.Drawing.Size(60, 21);
-            this.comboBox_Encerrada.TabIndex = 91;
-            this.comboBox_Encerrada.Text = "Nao";
-            // 
-            // textBox_Telefone
-            // 
-            this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
-            this.textBox_Telefone.Mask = "(99) 0000-0000";
-            this.textBox_Telefone.Name = "textBox_Telefone";
-            this.textBox_Telefone.Size = new System.Drawing.Size(306, 20);
-            this.textBox_Telefone.TabIndex = 2;
-            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1322,7 +1334,7 @@
         private System.Windows.Forms.TextBox textBox_Resultado1;
         private System.Windows.Forms.TextBox textBox_PsEntrada1;
         private System.Windows.Forms.TextBox textBox_PsSaida1;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label_Valor;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label5;
