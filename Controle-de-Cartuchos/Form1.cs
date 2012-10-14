@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
+using System.Drawing.Printing;
+
 using System.Data;
 using System.Data.OleDb;
 
@@ -26,130 +28,130 @@ namespace Controle_de_Cartuchos
         public void Cartucho01()
         {
             if (comboBox_Produto1.Text == "Cartucho" && comboBox_Servico1.Text == "Recarga")
-                textBox_Valor1.Text = "15";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Samsung")
-                textBox_Valor1.Text = "85";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga HP")
-                textBox_Valor1.Text = "60";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Lexmark")
-                textBox_Valor1.Text = "70";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Recarga Brother")
-                textBox_Valor1.Text = "60";
+                textBox_Valor1.Text = "15,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Rcrg Samsung")
+                textBox_Valor1.Text = "85,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Rcrg HP")
+                textBox_Valor1.Text = "60,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Rcrg Lexmark")
+                textBox_Valor1.Text = "70,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico1.Text == "Rcrg Brother")
+                textBox_Valor1.Text = "60,00";
             else
-                textBox_Valor1.Text = "0";
+                textBox_Valor1.Text = "0,00";
 
         }
 
         public void Cartucho02()
         {
             if (comboBox_Produto2.Text == "Cartucho" && comboBox_Servico2.Text == "Recarga")
-                textBox_Valor2.Text = "15";
-            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Samsung")
-                textBox_Valor2.Text = "85";
-            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga HP")
-                textBox_Valor2.Text = "60";
-            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Lexmark")
-                textBox_Valor2.Text = "70";
-            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Recarga Brother")
-                textBox_Valor2.Text = "60";
+                textBox_Valor2.Text = "15,00";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Rcrg Samsung")
+                textBox_Valor2.Text = "85,00";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Rcrg HP")
+                textBox_Valor2.Text = "60,00";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Rcrg Lexmark")
+                textBox_Valor2.Text = "70,00";
+            else if (comboBox_Produto2.Text == "Toner" && comboBox_Servico2.Text == "Rcrg Brother")
+                textBox_Valor2.Text = "60,00";
             else
-                textBox_Valor2.Text = "0";
+                textBox_Valor2.Text = "0,00";
         }
 
         public void Cartucho03()
         {
             if (comboBox_Produto3.Text == "Cartucho" && comboBox_Servico3.Text == "Recarga")
-                textBox_Valor3.Text = "15";
-            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Samsung")
-                textBox_Valor3.Text = "85";
-            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga HP")
-                textBox_Valor3.Text = "60";
-            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Lexmark")
-                textBox_Valor3.Text = "70";
-            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Recarga Brother")
-                textBox_Valor3.Text = "60";
+                textBox_Valor3.Text = "15,00";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Rcrg Samsung")
+                textBox_Valor3.Text = "85,00";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Rcrg HP")
+                textBox_Valor3.Text = "60,00";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Rcrg Lexmark")
+                textBox_Valor3.Text = "70,00";
+            else if (comboBox_Produto3.Text == "Toner" && comboBox_Servico3.Text == "Rcrg Brother")
+                textBox_Valor3.Text = "60,00";
             else
-                textBox_Valor3.Text = "0";
+                textBox_Valor3.Text = "0,00";
         }
 
         public void Cartucho04()
         {
             if (comboBox_Produto4.Text == "Cartucho" && comboBox_Servico4.Text == "Recarga")
-                textBox_Valor4.Text = "15";
-            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Samsung")
-                textBox_Valor4.Text = "85";
-            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga HP")
-                textBox_Valor4.Text = "60";
-            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Lexmark")
-                textBox_Valor4.Text = "70";
-            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Recarga Brother")
-                textBox_Valor4.Text = "60";
+                textBox_Valor4.Text = "15,00";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Rcrg Samsung")
+                textBox_Valor4.Text = "85,00";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Rcrg HP")
+                textBox_Valor4.Text = "60,00";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Rcrg Lexmark")
+                textBox_Valor4.Text = "70,00";
+            else if (comboBox_Produto4.Text == "Toner" && comboBox_Servico4.Text == "Rcrg Brother")
+                textBox_Valor4.Text = "60,00";
             else
-                textBox_Valor4.Text = "0";
+                textBox_Valor4.Text = "0,00";
         }
 
         public void Cartucho05()
         {
             if (comboBox_Produto5.Text == "Cartucho" && comboBox_Servico5.Text == "Recarga")
-                textBox_Valor5.Text = "15";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Samsung")
-                textBox_Valor5.Text = "85";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga HP")
-                textBox_Valor5.Text = "60";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Lexmark")
-                textBox_Valor5.Text = "70";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico5.Text == "Recarga Brother")
-                textBox_Valor5.Text = "60";
+                textBox_Valor5.Text = "15,00";
+            else if (comboBox_Produto5.Text == "Toner" && comboBox_Servico5.Text == "Rcrg Samsung")
+                textBox_Valor5.Text = "85,00";
+            else if (comboBox_Produto5.Text == "Toner" && comboBox_Servico5.Text == "Rcrg HP")
+                textBox_Valor5.Text = "60,00";
+            else if (comboBox_Produto5.Text == "Toner" && comboBox_Servico5.Text == "Rcrg Lexmark")
+                textBox_Valor5.Text = "70,00";
+            else if (comboBox_Produto5.Text == "Toner" && comboBox_Servico5.Text == "Rcrg Brother")
+                textBox_Valor5.Text = "60,00";
             else
-                textBox_Valor5.Text = "0";
+                textBox_Valor5.Text = "0,00";
         }
 
         public void Cartucho06()
         {
             if (comboBox_Produto6.Text == "Cartucho" && comboBox_Servico6.Text == "Recarga")
-                textBox_Valor6.Text = "15";
-            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Samsung")
-                textBox_Valor6.Text = "85";
-            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga HP")
-                textBox_Valor6.Text = "60";
-            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Lexmark")
-                textBox_Valor6.Text = "70";
-            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Recarga Brother")
-                textBox_Valor6.Text = "60";
+                textBox_Valor6.Text = "15,00";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Rcrg Samsung")
+                textBox_Valor6.Text = "85,00";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Rcrg HP")
+                textBox_Valor6.Text = "60,00";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Rcrg Lexmark")
+                textBox_Valor6.Text = "70,00";
+            else if (comboBox_Produto6.Text == "Toner" && comboBox_Servico6.Text == "Rcrg Brother")
+                textBox_Valor6.Text = "60,00";
             else
-                textBox_Valor6.Text = "0";
+                textBox_Valor6.Text = "0,00";
         }
 
         public void Cartucho07()
         {
             if (comboBox_Produto7.Text == "Cartucho" && comboBox_Servico7.Text == "Recarga")
-                textBox_Valor7.Text = "15";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Samsung")
-                textBox_Valor7.Text = "85";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga HP")
-                textBox_Valor7.Text = "60";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Lexmark")
-                textBox_Valor7.Text = "70";
-            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Recarga Brother")
-                textBox_Valor7.Text = "60";
+                textBox_Valor7.Text = "15,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Rcrg Samsung")
+                textBox_Valor7.Text = "85,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Rcrg HP")
+                textBox_Valor7.Text = "60,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Rcrg Lexmark")
+                textBox_Valor7.Text = "70,00";
+            else if (comboBox_Produto1.Text == "Toner" && comboBox_Servico7.Text == "Rcrg Brother")
+                textBox_Valor7.Text = "60,00";
             else
-                textBox_Valor7.Text = "0";
+                textBox_Valor7.Text = "0,00";
         }
 
         public void Cartucho08()
         {
             if (comboBox_Produto8.Text == "Cartucho" && comboBox_Servico8.Text == "Recarga")
-                textBox_Valor8.Text = "15";
-            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Samsung")
-                textBox_Valor8.Text = "85";
-            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga HP")
-                textBox_Valor8.Text = "60";
-            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Lexmark")
-                textBox_Valor8.Text = "70";
-            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Recarga Brother")
-                textBox_Valor8.Text = "60";
+                textBox_Valor8.Text = "15,00";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Rcrg Samsung")
+                textBox_Valor8.Text = "85,00";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Rcrg HP")
+                textBox_Valor8.Text = "60,00";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Rcrg Lexmark")
+                textBox_Valor8.Text = "70,00";
+            else if (comboBox_Produto8.Text == "Toner" && comboBox_Servico8.Text == "Rcrg Brother")
+                textBox_Valor8.Text = "60,00";
             else
-                textBox_Valor8.Text = "0";
+                textBox_Valor8.Text = "0,00";
         }
         public void Limpar()
         {
@@ -710,12 +712,12 @@ namespace Controle_de_Cartuchos
 
         private void comboBox_Produto3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cartucho04();
+            Cartucho03();
         }
 
         private void comboBox_Produto4_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Cartucho05();
+            Cartucho04();
         }
 
         private void comboBox_Produto5_SelectedIndexChanged(object sender, EventArgs e)
@@ -776,6 +778,30 @@ namespace Controle_de_Cartuchos
         private void comboBox_Servico8_SelectedIndexChanged(object sender, EventArgs e)
         {
             Cartucho08();
+        }
+
+        private void button_Imprimir_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                PrintDocument Imprimir = new PrintDocument();
+
+                Imprimir.PrintPage += new PrintPageEventHandler(this.printDocument_Imprimir_PrintPage);
+
+                Imprimir.Print();
+            }
+            catch
+            {
+            }
+        }
+
+        private void printDocument_Imprimir_PrintPage(object sender, PrintPageEventArgs e)
+        {
+            e.Graphics.DrawString("=============================================\n\n     ..::Central     Do     Cartucho::..    \n\n" + "Cliente  : " + textBox_Nome.Text + "\nTelefone : " + textBox_Telefone.Text + "            OS : " + label_Os.Text + "\nData     : " + dateTimePicker_Data.Value.ToShortDateString() + "\n=============================================\nServiços : \n" + "Artigo      " + "Identificação   " + "PSEntrada    " + "Valor\n------------------------------------------------\n" + comboBox_Servico1.Text + "      " + textBox_Identificacao1.Text + "         " + textBox_PsEntrada1.Text + "         " + textBox_Valor1.Text + "\n" + comboBox_Servico2.Text + "      " + textBox_Identificacao2.Text + "       " + textBox_PsEntrada2.Text + "         " + textBox_Valor2.Text + "\n" + comboBox_Servico3.Text + "      " + textBox_Identificacao3.Text + "       " + textBox_PsEntrada3.Text + "         " + textBox_Valor3.Text + "\n" + comboBox_Servico4.Text + "      " + textBox_Identificacao4.Text + "       " + textBox_PsEntrada4.Text + "         " + textBox_Valor4.Text + "\n" + comboBox_Servico5.Text + "      " + textBox_Identificacao5.Text + "       " + textBox_PsEntrada5.Text + "         " + textBox_Valor5.Text + "\n" + comboBox_Servico6.Text + "      " + textBox_Identificacao6.Text + "       " + textBox_PsEntrada6.Text + "         " + textBox_Valor6.Text + "\n" + comboBox_Servico7.Text + "      " + textBox_Identificacao7.Text + "       " + textBox_PsEntrada7.Text + "         " + textBox_Valor7.Text + "\n" + comboBox_Servico8.Text + "      " + textBox_Identificacao8.Text + "       " + textBox_PsEntrada8.Text + "         " + textBox_Valor8.Text + "\n" + "================================== TOTAL : " + textBox_ValorTotal.Text + "\nInformacoes : \n" + "1 - Os cartuchos so poderao ser retirados mediante a apresentacao deste comprovante. Conserve-o\n" + "2 - Apos 15 dias se nao forem retirados os Cartuchos poderao ser revendidos para cobrirem gastos e Mao de obra\n" + "3 - Nao nos responsabilizamos por uso incorreto dos cartuchos, caso haja alguma duvida, peça auxilio a um de nossos técnicos\n" + "4 - RECARGA   NÃO   DANIFICA   CARTUCHOS, A CENTRAL DO CARTUCHO AGRADECE \n" + "RUA DORA LIGIA N? 25 - VILA ABERNESIA - (12)3662-4150", new Font("Arial", 16), Brushes.Black, 0, 0);
+
+            e.HasMorePages = false;
+
+
         }
     }
 }

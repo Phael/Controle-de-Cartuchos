@@ -128,6 +128,7 @@
             this.button_Atualizar = new System.Windows.Forms.Button();
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
+            this.printDocument_Imprimir = new System.Drawing.Printing.PrintDocument();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -458,6 +459,7 @@
             this.button_Imprimir.TabIndex = 70;
             this.button_Imprimir.Text = "IMPRIMIR";
             this.button_Imprimir.UseVisualStyleBackColor = false;
+            this.button_Imprimir.Click += new System.EventHandler(this.button_Imprimir_Click);
             // 
             // button_Processar
             // 
@@ -529,7 +531,11 @@
             this.comboBox_Servico8.FormattingEnabled = true;
             this.comboBox_Servico8.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico8.Location = new System.Drawing.Point(90, 429);
             this.comboBox_Servico8.Name = "comboBox_Servico8";
             this.comboBox_Servico8.Size = new System.Drawing.Size(96, 21);
@@ -542,8 +548,8 @@
             this.comboBox_Produto8.FormattingEnabled = true;
             this.comboBox_Produto8.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto8.Location = new System.Drawing.Point(16, 429);
             this.comboBox_Produto8.Name = "comboBox_Produto8";
@@ -598,7 +604,11 @@
             this.comboBox_Servico7.FormattingEnabled = true;
             this.comboBox_Servico7.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico7.Location = new System.Drawing.Point(90, 400);
             this.comboBox_Servico7.Name = "comboBox_Servico7";
             this.comboBox_Servico7.Size = new System.Drawing.Size(96, 21);
@@ -611,8 +621,8 @@
             this.comboBox_Produto7.FormattingEnabled = true;
             this.comboBox_Produto7.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto7.Location = new System.Drawing.Point(16, 400);
             this.comboBox_Produto7.Name = "comboBox_Produto7";
@@ -667,7 +677,11 @@
             this.comboBox_Servico6.FormattingEnabled = true;
             this.comboBox_Servico6.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico6.Location = new System.Drawing.Point(90, 371);
             this.comboBox_Servico6.Name = "comboBox_Servico6";
             this.comboBox_Servico6.Size = new System.Drawing.Size(96, 21);
@@ -681,8 +695,8 @@
             this.comboBox_Produto6.FormattingEnabled = true;
             this.comboBox_Produto6.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto6.Location = new System.Drawing.Point(16, 371);
             this.comboBox_Produto6.Name = "comboBox_Produto6";
@@ -739,7 +753,11 @@
             this.comboBox_Servico5.FormattingEnabled = true;
             this.comboBox_Servico5.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico5.Location = new System.Drawing.Point(90, 342);
             this.comboBox_Servico5.Name = "comboBox_Servico5";
             this.comboBox_Servico5.Size = new System.Drawing.Size(96, 21);
@@ -752,8 +770,8 @@
             this.comboBox_Produto5.FormattingEnabled = true;
             this.comboBox_Produto5.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto5.Location = new System.Drawing.Point(16, 342);
             this.comboBox_Produto5.Name = "comboBox_Produto5";
@@ -808,7 +826,11 @@
             this.comboBox_Servico4.FormattingEnabled = true;
             this.comboBox_Servico4.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico4.Location = new System.Drawing.Point(90, 312);
             this.comboBox_Servico4.Name = "comboBox_Servico4";
             this.comboBox_Servico4.Size = new System.Drawing.Size(96, 21);
@@ -821,8 +843,8 @@
             this.comboBox_Produto4.FormattingEnabled = true;
             this.comboBox_Produto4.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto4.Location = new System.Drawing.Point(16, 312);
             this.comboBox_Produto4.Name = "comboBox_Produto4";
@@ -877,7 +899,11 @@
             this.comboBox_Servico3.FormattingEnabled = true;
             this.comboBox_Servico3.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico3.Location = new System.Drawing.Point(90, 283);
             this.comboBox_Servico3.Name = "comboBox_Servico3";
             this.comboBox_Servico3.Size = new System.Drawing.Size(96, 21);
@@ -890,8 +916,8 @@
             this.comboBox_Produto3.FormattingEnabled = true;
             this.comboBox_Produto3.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto3.Location = new System.Drawing.Point(16, 283);
             this.comboBox_Produto3.Name = "comboBox_Produto3";
@@ -946,7 +972,11 @@
             this.comboBox_Servico2.FormattingEnabled = true;
             this.comboBox_Servico2.Items.AddRange(new object[] {
             "Recarga",
-            "Reparo"});
+            "Reparo",
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico2.Location = new System.Drawing.Point(90, 252);
             this.comboBox_Servico2.Name = "comboBox_Servico2";
             this.comboBox_Servico2.Size = new System.Drawing.Size(96, 21);
@@ -959,8 +989,8 @@
             this.comboBox_Produto2.FormattingEnabled = true;
             this.comboBox_Produto2.Items.AddRange(new object[] {
             "Cartucho",
-            "Toner ",
-            "Permuta ",
+            "Toner",
+            "Permuta",
             "Reparo"});
             this.comboBox_Produto2.Location = new System.Drawing.Point(16, 252);
             this.comboBox_Produto2.Name = "comboBox_Produto2";
@@ -1076,10 +1106,10 @@
             this.comboBox_Servico1.Items.AddRange(new object[] {
             "Recarga",
             "Reparo",
-            "Recarga Samsung",
-            "Recarga HP",
-            "Recarga Lexmark",
-            "Recarga Brother"});
+            "Rcrg Samsung",
+            "Rcrg HP",
+            "Rcrg Lexmark",
+            "Rcrg Brother"});
             this.comboBox_Servico1.Location = new System.Drawing.Point(90, 222);
             this.comboBox_Servico1.Name = "comboBox_Servico1";
             this.comboBox_Servico1.Size = new System.Drawing.Size(96, 21);
@@ -1235,6 +1265,10 @@
             this.button_AlterarCaminho.UseVisualStyleBackColor = false;
             this.button_AlterarCaminho.Click += new System.EventHandler(this.button_AlterarCaminho_Click);
             // 
+            // printDocument_Imprimir
+            // 
+            this.printDocument_Imprimir.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_Imprimir_PrintPage);
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1371,6 +1405,7 @@
         private System.Windows.Forms.Label label_Encerrada;
         private System.Windows.Forms.ComboBox comboBox_Encerrada;
         private System.Windows.Forms.MaskedTextBox textBox_Telefone;
+        private System.Drawing.Printing.PrintDocument printDocument_Imprimir;
     }
 }
 
