@@ -212,6 +212,16 @@ namespace Controle_de_Cartuchos
             textBox_Resultado7.Text = string.Empty;
             textBox_Resultado8.Text = string.Empty;
 
+            textBox_Valor1.Enabled = false;
+            textBox_Valor2.Enabled = false;
+            textBox_Valor3.Enabled = false;
+            textBox_Valor4.Enabled = false;
+            textBox_Valor5.Enabled = false;
+            textBox_Valor6.Enabled = false;
+            textBox_Valor7.Enabled = false;
+            textBox_Valor8.Enabled = false;
+            
+
             textBox_Valor1.Text = "0";
             textBox_Valor2.Text = "0";
             textBox_Valor3.Text = "0";
@@ -301,7 +311,7 @@ namespace Controle_de_Cartuchos
                 dataGridView_Cartuchos.DataSource = Ds;
                 dataGridView_Cartuchos.DataMember = "Cartuchos";
 
-                OleDbDataAdapter Historico_Visao = new OleDbDataAdapter("SELECT OS, Nome, Data,Telefone  FROM Cartuchos", Conexao);
+                OleDbDataAdapter Historico_Visao = new OleDbDataAdapter("SELECT OS, Nome, Data, Encerramento  FROM Cartuchos", Conexao);
 
                 Historico_Visao.Fill(Da, "Cartuchos_Visao");
 
@@ -405,13 +415,22 @@ namespace Controle_de_Cartuchos
 
                 string Data = dateTimePicker_Data.Value.ToShortDateString();
 
+                string Encerramento = ". . .";
+
+                //Verifica se a OS Ja foi encerrada
+                if (comboBox_Encerrada.Text == "Sim")
+                    Encerramento = dateTimePicker_Encerramento.Value.ToShortDateString();
+                else
+                    Encerramento = ". . .";
+
+                //Calcula O Total de Valores
                 float ValorTotal =  Valor1+Valor2+Valor3+Valor4+Valor5+Valor6+Valor7+Valor8;
                 textBox_ValorTotal.Text = Convert.ToString(ValorTotal) + ",00";
 
                 if (button_Processar.Text == "PROCESSAR")
                 {
                     string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
-                    string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data, ValorTotal, Encerrada)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "' , '" + ValorTotal + "','" + Encerrada + "')";
+                    string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data, ValorTotal, Encerrada, Encerramento)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "' , '" + ValorTotal + "','" + Encerrada + "','"+Encerramento+"')";
 
 
                     //cria a conexão com o banco de dados
@@ -436,16 +455,25 @@ namespace Controle_de_Cartuchos
                     {
                         //fecha a conexao
                         ConexaoBD.Close();
-                        dataGridView_Cartuchos.Update();
                         BancoDeDados();
+                        dataGridView_Cartuchos.Focus();
+                        button_Processar.Enabled = false;
+                        dateTimePicker_Encerramento.Visible = false;
                     }
                 }
                 else
                 {
+                    //Abre a Conexao com o Banco de Dados
                     string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
+
                     CodigoID = dataGridView_Cartuchos[0, LinhaAtual].Value.ToString();
 
-                    string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data = '" + Data + "', ValorTotal = '" + ValorTotal + "', Encerrada = '" + Encerrada + "' WHERE OS= " + int.Parse(CodigoID) + "";
+                    if (comboBox_Encerrada.Text == "Sim")
+                        Encerramento = dateTimePicker_Encerramento.Value.ToShortDateString();
+                    else
+                        Encerramento = ". . .";
+
+                    string Editar = "UPDATE Cartuchos SET Nome = '" + Nome + "' , Telefone = '" + Telefone + "', Produto1 = '" + Produto1 + "' , Produto2 = '" + Produto2 + "' , Produto3 = '" + Produto3 + "' , Produto4 = '" + Produto4 + "' , Produto5 = '" + Produto5 + "' , Produto6 = '" + Produto6 + "' , Produto7 = '" + Produto7 + "' , Produto8 = '" + Produto8 + "' , Servico1 = '" + Servico1 + "',Servico2 = '" + Servico2 + "',Servico3 = '" + Servico3 + "',Servico4 = '" + Servico4 + "',Servico5 = '" + Servico5 + "' , Servico6 = '" + Servico6 + "' , Servico7 = '" + Servico7 + "' , Servico8 = '" + Servico8 + "' , Identificacao1 = '" + Identificacao1 + "' , Identificacao2 = '" + Identificacao2 + "' , Identificacao3 = '" + Identificacao3 + "' , Identificacao4 = '" + Identificacao4 + "' , Identificacao5 = '" + Identificacao5 + "' , Identificacao6 = '" + Identificacao6 + "' , Identificacao7 = '" + Identificacao7 + "',Identificacao8 = '" + Identificacao8 + "',PSEntrada1 = '" + PSEntrada1 + "',PSEntrada2 = '" + PSEntrada2 + "' , PSEntrada3 = '" + PSEntrada3 + "' , PSEntrada4 = '" + PSEntrada4 + "' , PSEntrada5 = '" + PSEntrada5 + "' , PSEntrada6 = '" + PSEntrada6 + "' , PSEntrada7 = '" + PSEntrada7 + "' , PSEntrada8 = '" + PSEntrada8 + "' , PSSaida1 = '" + PSSaida1 + "' , PSSaida2 = '" + PSSaida2 + "' , PSSaida3 = '" + PSSaida3 + "' , PSSaida4 = '" + PSSaida4 + "' , PSSaida5 = '" + PSSaida5 + "' , PSSaida6 = '" + PSSaida6 + "' , PSSaida7 = '" + PSSaida7 + "',PSSaida8 = '" + PSSaida8 + "' , Resultado1 = '" + Resultado1 + "', Resultado2 = '" + Resultado2 + "' , Resultado3 = '" + Resultado3 + "', Resultado4 = '" + Resultado4 + "', Resultado5 = '" + Resultado5 + "' , Resultado6 = '" + Resultado6 + "' , Resultado7 = '" + Resultado7 + "' , Resultado8 = '" + Resultado8 + "' , Valor1 = '" + Valor1 + "' , Valor2 = '" + Valor2 + "' , Valor3 = '" + Valor3 + "' , Valor4 = '" + Valor4 + "' , Valor5 = '" + Valor5 + "' , Valor6 = '" + Valor6 + "',Valor7 = '" + Valor7 + "',Valor8 = '" + Valor8 + "' ,Baia1 = '" + Baia1 + "' , Baia2 = '" + Baia2 + "' , Baia3 = '" + Baia3 + "' , Baia4 = '" + Baia4 + "' , Baia5 = '" + Baia5 + "', Baia6 = '" + Baia6 + "' , Baia7 = '" + Baia7 + "' , Baia8 = '" + Baia8 + "' , Observacao = '" + Observacao + "' , Data= '" + Data + "', ValorTotal = '" + ValorTotal + "', Encerrada = '" + Encerrada + "', Encerramento = '" + Encerramento + "' WHERE OS= " + int.Parse(CodigoID) + "";
 
                     //cria a conexão com o banco de dados
                     OleDbConnection ConexaoBD = new OleDbConnection(Conexao);
@@ -467,6 +495,8 @@ namespace Controle_de_Cartuchos
                         ConexaoBD.Close();
                         BancoDeDados();
                         button_Processar.Text = "PROCESSAR";
+                        button_Processar.Enabled = false;
+                        dateTimePicker_Encerramento.Visible = false;
                     }
                 }
             }
@@ -561,9 +591,11 @@ namespace Controle_de_Cartuchos
 
                 dateTimePicker_Data.Text = dataGridView_Cartuchos[68, LinhaAtual].Value.ToString();
 
-                textBox_ValorTotal.Text = dataGridView_Cartuchos[69, LinhaAtual].Value.ToString();
+                textBox_ValorTotal.Text = dataGridView_Cartuchos[69, LinhaAtual].Value.ToString()+",00";
 
                 comboBox_Encerrada.Text = dataGridView_Cartuchos[70, LinhaAtual].Value.ToString();
+
+                button_Processar.Enabled = true;
 
                 button_Processar.Text = "SALVAR";
 
@@ -623,6 +655,7 @@ namespace Controle_de_Cartuchos
             int GridMax = dataGridView_Cartuchos.RowCount;
             Limpar();
             label_Os.Text = Convert.ToString(GridMax);
+            button_Processar.Enabled = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -797,11 +830,20 @@ namespace Controle_de_Cartuchos
 
         private void printDocument_Imprimir_PrintPage(object sender, PrintPageEventArgs e)
         {
-            e.Graphics.DrawString("=============================================\n\n     ..::Central     Do     Cartucho::..    \n\n" + "Cliente  : " + textBox_Nome.Text + "\nTelefone : " + textBox_Telefone.Text + "            OS : " + label_Os.Text + "\nData     : " + dateTimePicker_Data.Value.ToShortDateString() + "\n=============================================\nServiços : \n" + "Artigo      " + "Identificação   " + "PSEntrada    " + "Valor\n------------------------------------------------\n" + comboBox_Servico1.Text + "      " + textBox_Identificacao1.Text + "         " + textBox_PsEntrada1.Text + "         " + textBox_Valor1.Text + "\n" + comboBox_Servico2.Text + "      " + textBox_Identificacao2.Text + "       " + textBox_PsEntrada2.Text + "         " + textBox_Valor2.Text + "\n" + comboBox_Servico3.Text + "      " + textBox_Identificacao3.Text + "       " + textBox_PsEntrada3.Text + "         " + textBox_Valor3.Text + "\n" + comboBox_Servico4.Text + "      " + textBox_Identificacao4.Text + "       " + textBox_PsEntrada4.Text + "         " + textBox_Valor4.Text + "\n" + comboBox_Servico5.Text + "      " + textBox_Identificacao5.Text + "       " + textBox_PsEntrada5.Text + "         " + textBox_Valor5.Text + "\n" + comboBox_Servico6.Text + "      " + textBox_Identificacao6.Text + "       " + textBox_PsEntrada6.Text + "         " + textBox_Valor6.Text + "\n" + comboBox_Servico7.Text + "      " + textBox_Identificacao7.Text + "       " + textBox_PsEntrada7.Text + "         " + textBox_Valor7.Text + "\n" + comboBox_Servico8.Text + "      " + textBox_Identificacao8.Text + "       " + textBox_PsEntrada8.Text + "         " + textBox_Valor8.Text + "\n" + "================================== TOTAL : " + textBox_ValorTotal.Text + "\nInformacoes : \n" + "1 - Os cartuchos so poderao ser retirados mediante a apresentacao deste comprovante. Conserve-o\n" + "2 - Apos 15 dias se nao forem retirados os Cartuchos poderao ser revendidos para cobrirem gastos e Mao de obra\n" + "3 - Nao nos responsabilizamos por uso incorreto dos cartuchos, caso haja alguma duvida, peça auxilio a um de nossos técnicos\n" + "4 - RECARGA   NÃO   DANIFICA   CARTUCHOS, A CENTRAL DO CARTUCHO AGRADECE \n" + "RUA DORA LIGIA N? 25 - VILA ABERNESIA - (12)3662-4150", new Font("Arial", 16), Brushes.Black, 0, 0);
+
+            e.Graphics.DrawString("=============================================\n\n     ..::Central     Do     Cartucho::..    \n\n" + "=============================================\n" + "Cliente  : " + textBox_Nome.Text + "\nTelefone : " + textBox_Telefone.Text + "            OS : " + label_Os.Text + "\nData     : " + dateTimePicker_Data.Value.ToShortDateString() + "\n=============================================\nServiços : \n" + "Artigo      " + "Identificação   " + "PSEntrada    " + "Valor\n------------------------------------------------\n" + comboBox_Produto1.Text + "        " + textBox_Identificacao1.Text + "         " + textBox_PsEntrada1.Text + "           " + textBox_Valor1.Text + "\n" + comboBox_Produto2.Text + "        " + textBox_Identificacao2.Text + "         " + textBox_PsEntrada2.Text + "           " + textBox_Valor2.Text + "\n" + comboBox_Produto3.Text + "        " + textBox_Identificacao3.Text + "         " + textBox_PsEntrada3.Text + "           " + textBox_Valor3.Text + "\n" + comboBox_Produto4.Text + "        " + textBox_Identificacao4.Text + "         " + textBox_PsEntrada4.Text + "           " + textBox_Valor4.Text + "\n" + comboBox_Produto5.Text + "        " + textBox_Identificacao5.Text + "         " + textBox_PsEntrada5.Text + "           " + textBox_Valor5.Text + "\n" + comboBox_Produto6.Text + "        " + textBox_Identificacao6.Text + "         " + textBox_PsEntrada6.Text + "           " + textBox_Valor6.Text + "\n" + comboBox_Produto7.Text + "        " + textBox_Identificacao7.Text + "         " + textBox_PsEntrada7.Text + "           " + textBox_Valor7.Text + "\n" + comboBox_Produto8.Text + "        " + textBox_Identificacao8.Text + "         " + textBox_PsEntrada8.Text + "           " + textBox_Valor8.Text + "\n" + "================================= TOTAL : " + textBox_ValorTotal.Text + "\nInformacoes : \n" + "1 - Os cartuchos so poderao ser retirados mediante a apresentacao deste comprovante.\nConserve-o;\n" + "2 - Apos 15 dias se nao forem retirados, os Cartuchos poderao ser revendidos para\ncobrirem gastos e Mao de obra;\n" + "3 - Nao nos responsabilizamos por uso incorreto dos cartuchos, caso haja alguma\nduvida, peca auxilio a um de nossos tecnicos;\n\n" + "     RECARGA   NAO   DANIFICA   CARTUCHOS\n         A CENTRAL DO CARTUCHO AGRADECE \n\n" + "     RUA DORA LIGIA N° 25 - VILA ABERNESIA  " + "                   (12)3662-4150", new Font("Arial", 16), Brushes.Black, 0, 0);
 
             e.HasMorePages = false;
 
 
+        }
+
+        private void comboBox_Encerrada_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_Encerrada.Text == "Sim")
+                dateTimePicker_Encerramento.Visible = true;
+            else
+                dateTimePicker_Encerramento.Visible = false;
         }
     }
 }

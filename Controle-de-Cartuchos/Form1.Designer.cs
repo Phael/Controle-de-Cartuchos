@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
@@ -129,6 +130,7 @@
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
             this.printDocument_Imprimir = new System.Drawing.Printing.PrintDocument();
+            this.dateTimePicker_Encerramento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -183,6 +185,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.dateTimePicker_Encerramento);
             this.groupBox2.Controls.Add(this.textBox_Telefone);
             this.groupBox2.Controls.Add(this.label_Encerrada);
             this.groupBox2.Controls.Add(this.comboBox_Encerrada);
@@ -307,13 +310,15 @@
             this.comboBox_Encerrada.Location = new System.Drawing.Point(470, 499);
             this.comboBox_Encerrada.Name = "comboBox_Encerrada";
             this.comboBox_Encerrada.Size = new System.Drawing.Size(60, 21);
-            this.comboBox_Encerrada.TabIndex = 91;
+            this.comboBox_Encerrada.TabIndex = 67;
             this.comboBox_Encerrada.Text = "Nao";
+            this.comboBox_Encerrada.SelectedIndexChanged += new System.EventHandler(this.comboBox_Encerrada_SelectedIndexChanged);
             // 
             // textBox_ValorTotal
             // 
             this.textBox_ValorTotal.BackColor = System.Drawing.Color.LightPink;
             this.textBox_ValorTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_ValorTotal.Enabled = false;
             this.textBox_ValorTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_ValorTotal.Location = new System.Drawing.Point(470, 461);
             this.textBox_ValorTotal.Multiline = true;
@@ -329,7 +334,7 @@
             this.button_Novo.Location = new System.Drawing.Point(123, 669);
             this.button_Novo.Name = "button_Novo";
             this.button_Novo.Size = new System.Drawing.Size(100, 30);
-            this.button_Novo.TabIndex = 72;
+            this.button_Novo.TabIndex = 70;
             this.button_Novo.Text = "NOVO";
             this.button_Novo.UseVisualStyleBackColor = false;
             this.button_Novo.Click += new System.EventHandler(this.button_Novo_Click);
@@ -342,7 +347,7 @@
             this.button_Excluir.Location = new System.Drawing.Point(464, 669);
             this.button_Excluir.Name = "button_Excluir";
             this.button_Excluir.Size = new System.Drawing.Size(100, 30);
-            this.button_Excluir.TabIndex = 71;
+            this.button_Excluir.TabIndex = 72;
             this.button_Excluir.Text = "EXCLUIR";
             this.button_Excluir.UseVisualStyleBackColor = false;
             this.button_Excluir.Click += new System.EventHandler(this.button_Excluir_Click);
@@ -360,7 +365,7 @@
             this.textBox_Identificacao8.Location = new System.Drawing.Point(192, 429);
             this.textBox_Identificacao8.Name = "textBox_Identificacao8";
             this.textBox_Identificacao8.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Identificacao8.TabIndex = 62;
+            this.textBox_Identificacao8.TabIndex = 61;
             // 
             // textBox_Identificacao7
             // 
@@ -368,7 +373,7 @@
             this.textBox_Identificacao7.Location = new System.Drawing.Point(192, 400);
             this.textBox_Identificacao7.Name = "textBox_Identificacao7";
             this.textBox_Identificacao7.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Identificacao7.TabIndex = 54;
+            this.textBox_Identificacao7.TabIndex = 53;
             // 
             // textBox_Identificacao6
             // 
@@ -376,7 +381,7 @@
             this.textBox_Identificacao6.Location = new System.Drawing.Point(192, 371);
             this.textBox_Identificacao6.Name = "textBox_Identificacao6";
             this.textBox_Identificacao6.Size = new System.Drawing.Size(68, 20);
-            this.textBox_Identificacao6.TabIndex = 46;
+            this.textBox_Identificacao6.TabIndex = 45;
             // 
             // textBox_Identificacao5
             // 
@@ -442,7 +447,7 @@
             // 
             this.textBox_Observacao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
-            this.textBox_Observacao.Location = new System.Drawing.Point(17, 537);
+            this.textBox_Observacao.Location = new System.Drawing.Point(17, 553);
             this.textBox_Observacao.Multiline = true;
             this.textBox_Observacao.Name = "textBox_Observacao";
             this.textBox_Observacao.Size = new System.Drawing.Size(547, 92);
@@ -456,7 +461,7 @@
             this.button_Imprimir.Location = new System.Drawing.Point(359, 669);
             this.button_Imprimir.Name = "button_Imprimir";
             this.button_Imprimir.Size = new System.Drawing.Size(100, 30);
-            this.button_Imprimir.TabIndex = 70;
+            this.button_Imprimir.TabIndex = 71;
             this.button_Imprimir.Text = "IMPRIMIR";
             this.button_Imprimir.UseVisualStyleBackColor = false;
             this.button_Imprimir.Click += new System.EventHandler(this.button_Imprimir_Click);
@@ -478,7 +483,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(15, 507);
+            this.label11.Location = new System.Drawing.Point(15, 527);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 13);
             this.label11.TabIndex = 73;
@@ -490,7 +495,7 @@
             this.textBox_Baia8.Location = new System.Drawing.Point(529, 431);
             this.textBox_Baia8.Name = "textBox_Baia8";
             this.textBox_Baia8.Size = new System.Drawing.Size(34, 20);
-            this.textBox_Baia8.TabIndex = 67;
+            this.textBox_Baia8.TabIndex = 66;
             // 
             // textBox_Resultado8
             // 
@@ -498,7 +503,7 @@
             this.textBox_Resultado8.Location = new System.Drawing.Point(401, 431);
             this.textBox_Resultado8.Name = "textBox_Resultado8";
             this.textBox_Resultado8.Size = new System.Drawing.Size(63, 20);
-            this.textBox_Resultado8.TabIndex = 65;
+            this.textBox_Resultado8.TabIndex = 64;
             // 
             // textBox_PsEntrada8
             // 
@@ -506,7 +511,7 @@
             this.textBox_PsEntrada8.Location = new System.Drawing.Point(266, 429);
             this.textBox_PsEntrada8.Name = "textBox_PsEntrada8";
             this.textBox_PsEntrada8.Size = new System.Drawing.Size(65, 20);
-            this.textBox_PsEntrada8.TabIndex = 63;
+            this.textBox_PsEntrada8.TabIndex = 62;
             // 
             // textBox_PsSaida8
             // 
@@ -514,15 +519,16 @@
             this.textBox_PsSaida8.Location = new System.Drawing.Point(337, 430);
             this.textBox_PsSaida8.Name = "textBox_PsSaida8";
             this.textBox_PsSaida8.Size = new System.Drawing.Size(60, 20);
-            this.textBox_PsSaida8.TabIndex = 64;
+            this.textBox_PsSaida8.TabIndex = 63;
             // 
             // textBox_Valor8
             // 
+            this.textBox_Valor8.BackColor = System.Drawing.Color.White;
             this.textBox_Valor8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor8.Location = new System.Drawing.Point(470, 431);
             this.textBox_Valor8.Name = "textBox_Valor8";
             this.textBox_Valor8.Size = new System.Drawing.Size(53, 20);
-            this.textBox_Valor8.TabIndex = 66;
+            this.textBox_Valor8.TabIndex = 65;
             this.textBox_Valor8.Text = "0";
             // 
             // comboBox_Servico8
@@ -530,6 +536,7 @@
             this.comboBox_Servico8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico8.FormattingEnabled = true;
             this.comboBox_Servico8.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -539,7 +546,7 @@
             this.comboBox_Servico8.Location = new System.Drawing.Point(90, 429);
             this.comboBox_Servico8.Name = "comboBox_Servico8";
             this.comboBox_Servico8.Size = new System.Drawing.Size(96, 21);
-            this.comboBox_Servico8.TabIndex = 61;
+            this.comboBox_Servico8.TabIndex = 60;
             this.comboBox_Servico8.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico8_SelectedIndexChanged);
             // 
             // comboBox_Produto8
@@ -547,6 +554,7 @@
             this.comboBox_Produto8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto8.FormattingEnabled = true;
             this.comboBox_Produto8.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -554,7 +562,7 @@
             this.comboBox_Produto8.Location = new System.Drawing.Point(16, 429);
             this.comboBox_Produto8.Name = "comboBox_Produto8";
             this.comboBox_Produto8.Size = new System.Drawing.Size(68, 21);
-            this.comboBox_Produto8.TabIndex = 60;
+            this.comboBox_Produto8.TabIndex = 59;
             this.comboBox_Produto8.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto8_SelectedIndexChanged);
             // 
             // textBox_Baia7
@@ -563,7 +571,7 @@
             this.textBox_Baia7.Location = new System.Drawing.Point(529, 402);
             this.textBox_Baia7.Name = "textBox_Baia7";
             this.textBox_Baia7.Size = new System.Drawing.Size(34, 20);
-            this.textBox_Baia7.TabIndex = 59;
+            this.textBox_Baia7.TabIndex = 58;
             // 
             // textBox_Resultado7
             // 
@@ -571,7 +579,7 @@
             this.textBox_Resultado7.Location = new System.Drawing.Point(401, 402);
             this.textBox_Resultado7.Name = "textBox_Resultado7";
             this.textBox_Resultado7.Size = new System.Drawing.Size(63, 20);
-            this.textBox_Resultado7.TabIndex = 57;
+            this.textBox_Resultado7.TabIndex = 56;
             // 
             // textBox_PsEntrada7
             // 
@@ -579,7 +587,7 @@
             this.textBox_PsEntrada7.Location = new System.Drawing.Point(266, 400);
             this.textBox_PsEntrada7.Name = "textBox_PsEntrada7";
             this.textBox_PsEntrada7.Size = new System.Drawing.Size(65, 20);
-            this.textBox_PsEntrada7.TabIndex = 55;
+            this.textBox_PsEntrada7.TabIndex = 54;
             // 
             // textBox_PsSaida7
             // 
@@ -587,15 +595,16 @@
             this.textBox_PsSaida7.Location = new System.Drawing.Point(337, 401);
             this.textBox_PsSaida7.Name = "textBox_PsSaida7";
             this.textBox_PsSaida7.Size = new System.Drawing.Size(60, 20);
-            this.textBox_PsSaida7.TabIndex = 56;
+            this.textBox_PsSaida7.TabIndex = 55;
             // 
             // textBox_Valor7
             // 
+            this.textBox_Valor7.BackColor = System.Drawing.Color.White;
             this.textBox_Valor7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor7.Location = new System.Drawing.Point(470, 402);
             this.textBox_Valor7.Name = "textBox_Valor7";
             this.textBox_Valor7.Size = new System.Drawing.Size(53, 20);
-            this.textBox_Valor7.TabIndex = 58;
+            this.textBox_Valor7.TabIndex = 57;
             this.textBox_Valor7.Text = "0";
             // 
             // comboBox_Servico7
@@ -603,6 +612,7 @@
             this.comboBox_Servico7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico7.FormattingEnabled = true;
             this.comboBox_Servico7.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -612,7 +622,7 @@
             this.comboBox_Servico7.Location = new System.Drawing.Point(90, 400);
             this.comboBox_Servico7.Name = "comboBox_Servico7";
             this.comboBox_Servico7.Size = new System.Drawing.Size(96, 21);
-            this.comboBox_Servico7.TabIndex = 53;
+            this.comboBox_Servico7.TabIndex = 52;
             this.comboBox_Servico7.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico7_SelectedIndexChanged);
             // 
             // comboBox_Produto7
@@ -620,6 +630,7 @@
             this.comboBox_Produto7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto7.FormattingEnabled = true;
             this.comboBox_Produto7.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -627,7 +638,7 @@
             this.comboBox_Produto7.Location = new System.Drawing.Point(16, 400);
             this.comboBox_Produto7.Name = "comboBox_Produto7";
             this.comboBox_Produto7.Size = new System.Drawing.Size(68, 21);
-            this.comboBox_Produto7.TabIndex = 52;
+            this.comboBox_Produto7.TabIndex = 51;
             this.comboBox_Produto7.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto7_SelectedIndexChanged);
             // 
             // textBox_Baia6
@@ -636,7 +647,7 @@
             this.textBox_Baia6.Location = new System.Drawing.Point(529, 373);
             this.textBox_Baia6.Name = "textBox_Baia6";
             this.textBox_Baia6.Size = new System.Drawing.Size(34, 20);
-            this.textBox_Baia6.TabIndex = 51;
+            this.textBox_Baia6.TabIndex = 50;
             // 
             // textBox_Resultado6
             // 
@@ -644,7 +655,7 @@
             this.textBox_Resultado6.Location = new System.Drawing.Point(401, 373);
             this.textBox_Resultado6.Name = "textBox_Resultado6";
             this.textBox_Resultado6.Size = new System.Drawing.Size(63, 20);
-            this.textBox_Resultado6.TabIndex = 49;
+            this.textBox_Resultado6.TabIndex = 48;
             // 
             // textBox_PsEntrada6
             // 
@@ -652,7 +663,7 @@
             this.textBox_PsEntrada6.Location = new System.Drawing.Point(266, 371);
             this.textBox_PsEntrada6.Name = "textBox_PsEntrada6";
             this.textBox_PsEntrada6.Size = new System.Drawing.Size(65, 20);
-            this.textBox_PsEntrada6.TabIndex = 47;
+            this.textBox_PsEntrada6.TabIndex = 46;
             // 
             // textBox_PsSaida6
             // 
@@ -660,15 +671,16 @@
             this.textBox_PsSaida6.Location = new System.Drawing.Point(337, 372);
             this.textBox_PsSaida6.Name = "textBox_PsSaida6";
             this.textBox_PsSaida6.Size = new System.Drawing.Size(60, 20);
-            this.textBox_PsSaida6.TabIndex = 48;
+            this.textBox_PsSaida6.TabIndex = 47;
             // 
             // textBox_Valor6
             // 
+            this.textBox_Valor6.BackColor = System.Drawing.Color.White;
             this.textBox_Valor6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor6.Location = new System.Drawing.Point(470, 373);
             this.textBox_Valor6.Name = "textBox_Valor6";
             this.textBox_Valor6.Size = new System.Drawing.Size(53, 20);
-            this.textBox_Valor6.TabIndex = 50;
+            this.textBox_Valor6.TabIndex = 49;
             this.textBox_Valor6.Text = "0";
             // 
             // comboBox_Servico6
@@ -676,6 +688,7 @@
             this.comboBox_Servico6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico6.FormattingEnabled = true;
             this.comboBox_Servico6.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -685,8 +698,8 @@
             this.comboBox_Servico6.Location = new System.Drawing.Point(90, 371);
             this.comboBox_Servico6.Name = "comboBox_Servico6";
             this.comboBox_Servico6.Size = new System.Drawing.Size(96, 21);
-            this.comboBox_Servico6.TabIndex = 52;
-            this.comboBox_Servico6.Tag = "45";
+            this.comboBox_Servico6.TabIndex = 44;
+            this.comboBox_Servico6.Tag = "";
             this.comboBox_Servico6.SelectedIndexChanged += new System.EventHandler(this.comboBox_Servico6_SelectedIndexChanged);
             // 
             // comboBox_Produto6
@@ -694,6 +707,7 @@
             this.comboBox_Produto6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto6.FormattingEnabled = true;
             this.comboBox_Produto6.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -701,8 +715,8 @@
             this.comboBox_Produto6.Location = new System.Drawing.Point(16, 371);
             this.comboBox_Produto6.Name = "comboBox_Produto6";
             this.comboBox_Produto6.Size = new System.Drawing.Size(68, 21);
-            this.comboBox_Produto6.TabIndex = 51;
-            this.comboBox_Produto6.Tag = "44";
+            this.comboBox_Produto6.TabIndex = 43;
+            this.comboBox_Produto6.Tag = "";
             this.comboBox_Produto6.SelectedIndexChanged += new System.EventHandler(this.comboBox_Produto6_SelectedIndexChanged);
             // 
             // textBox_Baia5
@@ -711,7 +725,7 @@
             this.textBox_Baia5.Location = new System.Drawing.Point(529, 344);
             this.textBox_Baia5.Name = "textBox_Baia5";
             this.textBox_Baia5.Size = new System.Drawing.Size(34, 20);
-            this.textBox_Baia5.TabIndex = 50;
+            this.textBox_Baia5.TabIndex = 42;
             this.textBox_Baia5.Tag = "42";
             // 
             // textBox_Resultado5
@@ -740,6 +754,7 @@
             // 
             // textBox_Valor5
             // 
+            this.textBox_Valor5.BackColor = System.Drawing.Color.White;
             this.textBox_Valor5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor5.Location = new System.Drawing.Point(470, 344);
             this.textBox_Valor5.Name = "textBox_Valor5";
@@ -752,6 +767,7 @@
             this.comboBox_Servico5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico5.FormattingEnabled = true;
             this.comboBox_Servico5.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -769,6 +785,7 @@
             this.comboBox_Produto5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto5.FormattingEnabled = true;
             this.comboBox_Produto5.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -813,6 +830,7 @@
             // 
             // textBox_Valor4
             // 
+            this.textBox_Valor4.BackColor = System.Drawing.Color.White;
             this.textBox_Valor4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor4.Location = new System.Drawing.Point(470, 314);
             this.textBox_Valor4.Name = "textBox_Valor4";
@@ -825,6 +843,7 @@
             this.comboBox_Servico4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico4.FormattingEnabled = true;
             this.comboBox_Servico4.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -842,6 +861,7 @@
             this.comboBox_Produto4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto4.FormattingEnabled = true;
             this.comboBox_Produto4.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -886,6 +906,7 @@
             // 
             // textBox_Valor3
             // 
+            this.textBox_Valor3.BackColor = System.Drawing.Color.White;
             this.textBox_Valor3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor3.Location = new System.Drawing.Point(470, 285);
             this.textBox_Valor3.Name = "textBox_Valor3";
@@ -898,6 +919,7 @@
             this.comboBox_Servico3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico3.FormattingEnabled = true;
             this.comboBox_Servico3.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -915,6 +937,7 @@
             this.comboBox_Produto3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto3.FormattingEnabled = true;
             this.comboBox_Produto3.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -959,6 +982,7 @@
             // 
             // textBox_Valor2
             // 
+            this.textBox_Valor2.BackColor = System.Drawing.Color.White;
             this.textBox_Valor2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor2.Location = new System.Drawing.Point(470, 254);
             this.textBox_Valor2.Name = "textBox_Valor2";
@@ -971,6 +995,7 @@
             this.comboBox_Servico2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico2.FormattingEnabled = true;
             this.comboBox_Servico2.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -988,6 +1013,7 @@
             this.comboBox_Produto2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto2.FormattingEnabled = true;
             this.comboBox_Produto2.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -1092,6 +1118,7 @@
             // 
             // textBox_Valor1
             // 
+            this.textBox_Valor1.BackColor = System.Drawing.Color.White;
             this.textBox_Valor1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_Valor1.Location = new System.Drawing.Point(470, 224);
             this.textBox_Valor1.Name = "textBox_Valor1";
@@ -1104,6 +1131,7 @@
             this.comboBox_Servico1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Servico1.FormattingEnabled = true;
             this.comboBox_Servico1.Items.AddRange(new object[] {
+            "",
             "Recarga",
             "Reparo",
             "Rcrg Samsung",
@@ -1121,6 +1149,7 @@
             this.comboBox_Produto1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_Produto1.FormattingEnabled = true;
             this.comboBox_Produto1.Items.AddRange(new object[] {
+            "",
             "Cartucho",
             "Toner",
             "Permuta",
@@ -1144,11 +1173,11 @@
             // 
             // dateTimePicker_Data
             // 
-            this.dateTimePicker_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Data.Location = new System.Drawing.Point(32, 28);
+            this.dateTimePicker_Data.Location = new System.Drawing.Point(37, 26);
             this.dateTimePicker_Data.Name = "dateTimePicker_Data";
-            this.dateTimePicker_Data.Size = new System.Drawing.Size(100, 20);
+            this.dateTimePicker_Data.Size = new System.Drawing.Size(94, 20);
             this.dateTimePicker_Data.TabIndex = 73;
             // 
             // groupBox3
@@ -1269,6 +1298,15 @@
             // 
             this.printDocument_Imprimir.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_Imprimir_PrintPage);
             // 
+            // dateTimePicker_Encerramento
+            // 
+            this.dateTimePicker_Encerramento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_Encerramento.Location = new System.Drawing.Point(470, 527);
+            this.dateTimePicker_Encerramento.Name = "dateTimePicker_Encerramento";
+            this.dateTimePicker_Encerramento.Size = new System.Drawing.Size(94, 20);
+            this.dateTimePicker_Encerramento.TabIndex = 93;
+            this.dateTimePicker_Encerramento.Visible = false;
+            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1283,6 +1321,7 @@
             this.Controls.Add(this.textBox_Pesquisa);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1280, 1024);
             this.MinimumSize = new System.Drawing.Size(1024, 778);
             this.Name = "Form_Principal";
@@ -1406,6 +1445,7 @@
         private System.Windows.Forms.ComboBox comboBox_Encerrada;
         private System.Windows.Forms.MaskedTextBox textBox_Telefone;
         private System.Drawing.Printing.PrintDocument printDocument_Imprimir;
+        private System.Windows.Forms.DateTimePicker dateTimePicker_Encerramento;
     }
 }
 
