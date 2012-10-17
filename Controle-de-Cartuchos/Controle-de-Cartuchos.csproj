@@ -87,6 +87,15 @@
   <ItemGroup>
     <None Include="Resources\atualizar.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crbst_PAGINA_20INICIAL_20-_20Fundo_20Azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feixes-coloridos-e-fundo-preto-ea554.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\papel-de-parede-azul-2-1024x768.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

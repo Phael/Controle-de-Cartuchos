@@ -67,6 +67,27 @@ namespace Controle_de_Cartuchos.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap crbst_PAGINA_20INICIAL_20__20Fundo_20Azul {
+            get {
+                object obj = ResourceManager.GetObject("crbst_PAGINA_20INICIAL_20-_20Fundo_20Azul", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap feixes_coloridos_e_fundo_preto_ea554 {
+            get {
+                object obj = ResourceManager.GetObject("feixes-coloridos-e-fundo-preto-ea554", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap papel_de_parede_azul_2_1024x768 {
+            get {
+                object obj = ResourceManager.GetObject("papel-de-parede-azul-2-1024x768", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap Software_Update_icon {
             get {
                 object obj = ResourceManager.GetObject("Software_Update_icon", resourceCulture);

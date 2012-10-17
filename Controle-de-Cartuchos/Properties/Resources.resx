@@ -121,10 +121,19 @@
   <data name="softwareUpdate-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\softwareUpdate-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="atualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\atualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Software_Update_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Software_Update_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="atualizar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\atualizar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="crbst_PAGINA_20INICIAL_20-_20Fundo_20Azul" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\crbst_PAGINA_20INICIAL_20-_20Fundo_20Azul.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="feixes-coloridos-e-fundo-preto-ea554" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\feixes-coloridos-e-fundo-preto-ea554.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="papel-de-parede-azul-2-1024x768" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\papel-de-parede-azul-2-1024x768.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

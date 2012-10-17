@@ -327,8 +327,15 @@ namespace Controle_de_Cartuchos
             textBox_Nome.Focus();
             int GridMax = dataGridView_Cartuchos.RowCount;
             label_Os.Text = Convert.ToString(GridMax);
+
+            if (comboBox_Encerrada.Text == "Sim")
+                dateTimePicker_Encerramento.Visible = true;
+            else
+                dateTimePicker_Encerramento.Visible = false;
+            
+
         }
-        
+
         private void button_Processar_Click(object sender, EventArgs e)
         {
             if ((textBox_Valor1.Text != "") && (textBox_Valor2.Text != "") && (textBox_Valor3.Text != "") && (textBox_Valor4.Text) != "" && (textBox_Valor5.Text != "") && (textBox_Valor6.Text != "") && (textBox_Valor7.Text != "") && (textBox_Valor8.Text != ""))
@@ -419,15 +426,22 @@ namespace Controle_de_Cartuchos
 
                 //Verifica se a OS Ja foi encerrada
                 if (comboBox_Encerrada.Text == "Sim")
+                {
                     Encerramento = dateTimePicker_Encerramento.Value.ToShortDateString();
+                    Encerrada = "SIM";
+
+                }
+
                 else
+                {
                     Encerramento = ". . .";
+                }
 
                 //Calcula O Total de Valores
                 float ValorTotal =  Valor1+Valor2+Valor3+Valor4+Valor5+Valor6+Valor7+Valor8;
                 textBox_ValorTotal.Text = Convert.ToString(ValorTotal) + ",00";
 
-                if (button_Processar.Text == "PROCESSAR")
+                if (button_Processar.Text == "SALVAR")
                 {
                     string Conexao = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados();
                     string Inserir = "INSERT INTO Cartuchos(Nome, Telefone, Produto1, Produto2, Produto3, Produto4, Produto5, Produto6, Produto7, Produto8, Servico1 ,Servico2, Servico3, Servico4, Servico5, Servico6, Servico7, Servico8, Identificacao1, Identificacao2, Identificacao3, Identificacao4, Identificacao5, Identificacao6, Identificacao7, Identificacao8, PSEntrada1, PSEntrada2, PSEntrada3, PSEntrada4, PSEntrada5, PSEntrada6, PSEntrada7, PSEntrada8, PSSaida1, PSSaida2, PSSaida3, PSSaida4, PSSaida5, PSSaida6, PSSaida7, PSSaida8, Resultado1, Resultado2, Resultado3, Resultado4, Resultado5, Resultado6, Resultado7, Resultado8, Valor1, Valor2, Valor3, Valor4, Valor5, Valor6, Valor7, Valor8, Baia1, Baia2, Baia3, Baia4, Baia5, Baia6, Baia7, Baia8, Observacao, Data, ValorTotal, Encerrada, Encerramento)" + " VALUES('" + Nome + "' , '" + Telefone + "','" + Produto1 + "','" + Produto2 + "','" + Produto3 + "','" + Produto4 + "','" + Produto5 + "','" + Produto6 + "','" + Produto7 + "','" + Produto8 + "','" + Servico1 + "','" + Servico2 + "','" + Servico3 + "','" + Servico4 + "','" + Servico5 + "','" + Servico6 + "','" + Servico7 + "','" + Servico8 + "','" + Identificacao1 + "','" + Identificacao2 + "','" + Identificacao3 + "','" + Identificacao4 + "','" + Identificacao5 + "','" + Identificacao6 + "','" + Identificacao7 + "','" + Identificacao8 + "','" + PSEntrada1 + "','" + PSEntrada2 + "','" + PSEntrada3 + "','" + PSEntrada4 + "','" + PSEntrada5 + "','" + PSEntrada6 + "','" + PSEntrada7 + "','" + PSEntrada8 + "','" + PSSaida1 + "','" + PSSaida2 + "','" + PSSaida3 + "','" + PSSaida4 + "','" + PSSaida5 + "','" + PSSaida6 + "','" + PSSaida7 + "','" + PSSaida8 + "','" + Resultado1 + "','" + Resultado2 + "','" + Resultado3 + "','" + Resultado4 + "','" + Resultado5 + "','" + Resultado6 + "','" + Resultado7 + "','" + Resultado8 + "','" + Valor1 + "','" + Valor2 + "','" + Valor3 + "','" + Valor4 + "','" + Valor5 + "','" + Valor6 + "','" + Valor7 + "','" + Valor8 + "','" + Baia1 + "','" + Baia2 + "','" + Baia3 + "','" + Baia4 + "','" + Baia5 + "','" + Baia6 + "','" + Baia7 + "','" + Baia8 + "','" + Observacao + "','" + Data + "' , '" + ValorTotal + "','" + Encerrada + "','"+Encerramento+"')";
@@ -459,6 +473,7 @@ namespace Controle_de_Cartuchos
                         dataGridView_Cartuchos.Focus();
                         button_Processar.Enabled = false;
                         dateTimePicker_Encerramento.Visible = false;
+                        
                     }
                 }
                 else
@@ -494,8 +509,6 @@ namespace Controle_de_Cartuchos
                     {
                         ConexaoBD.Close();
                         BancoDeDados();
-                        button_Processar.Text = "PROCESSAR";
-                        button_Processar.Enabled = false;
                         dateTimePicker_Encerramento.Visible = false;
                     }
                 }
@@ -597,7 +610,11 @@ namespace Controle_de_Cartuchos
 
                 button_Processar.Enabled = true;
 
-                button_Processar.Text = "SALVAR";
+                button_Processar.Text = "EDITAR";
+                if (comboBox_Encerrada.Text == "SIM")
+                    comboBox_Encerrada.ForeColor = Color.Red;
+                else
+                    comboBox_Encerrada.ForeColor = Color.Black;
 
             }
             
@@ -605,7 +622,6 @@ namespace Controle_de_Cartuchos
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            string SqlCmd="";
             string SqlCmd_Visao = "";
             OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados());
 
@@ -623,7 +639,6 @@ namespace Controle_de_Cartuchos
 
             if (textBox_Pesquisa.Text != "")
             {
-                SqlCmd = "SELECT * FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
                 SqlCmd_Visao = "SELECT OS,Nome,Data,Telefone FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
             }   
 
@@ -631,17 +646,13 @@ namespace Controle_de_Cartuchos
             {
                 if (textBox_Pesquisa.Text != null && textBox_Pesquisa.Text != "")
                 {
-                    OleDbDataAdapter Historico = new OleDbDataAdapter(SqlCmd, Conexao);
                     OleDbDataAdapter Historico_Visao = new OleDbDataAdapter(SqlCmd_Visao, Conexao);
 
                     Historico_Visao.Fill(Ds_Visao, "Cartuchos_Visao");
-                    Historico.Fill(Ds, "Cartuchos");
 
                     dataGridView_Visao.DataSource = Ds_Visao;
                     dataGridView_Visao.DataMember = "Cartuchos_Visao";
 
-                    dataGridView_Cartuchos.DataSource = Ds;
-                    dataGridView_Cartuchos.DataMember = "Cartuchos";
                 }
                 else
                     BancoDeDados();
@@ -656,6 +667,7 @@ namespace Controle_de_Cartuchos
             Limpar();
             label_Os.Text = Convert.ToString(GridMax);
             button_Processar.Enabled = true;
+            button_Processar.Text = "SALVAR";
         }
 
         private void button1_Click(object sender, EventArgs e)

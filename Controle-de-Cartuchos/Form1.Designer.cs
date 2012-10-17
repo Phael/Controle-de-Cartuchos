@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
             this.dataGridView_Cartuchos = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker_Encerramento = new System.Windows.Forms.DateTimePicker();
             this.textBox_Telefone = new System.Windows.Forms.MaskedTextBox();
             this.label_Encerrada = new System.Windows.Forms.Label();
             this.comboBox_Encerrada = new System.Windows.Forms.ComboBox();
@@ -130,7 +132,6 @@
             this.textBox_Caminho = new System.Windows.Forms.TextBox();
             this.button_AlterarCaminho = new System.Windows.Forms.Button();
             this.printDocument_Imprimir = new System.Drawing.Printing.PrintDocument();
-            this.dateTimePicker_Encerramento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Visao)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Cartuchos)).BeginInit();
@@ -155,23 +156,32 @@
             // 
             // dataGridView_Visao
             // 
+            this.dataGridView_Visao.AllowUserToAddRows = false;
             this.dataGridView_Visao.AllowUserToDeleteRows = false;
             this.dataGridView_Visao.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView_Visao.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_Visao.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_Visao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Visao.GridColor = System.Drawing.SystemColors.Desktop;
             this.dataGridView_Visao.Location = new System.Drawing.Point(3, 16);
             this.dataGridView_Visao.Name = "dataGridView_Visao";
             this.dataGridView_Visao.ReadOnly = true;
+            this.dataGridView_Visao.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
+            this.dataGridView_Visao.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dataGridView_Visao.Size = new System.Drawing.Size(412, 661);
             this.dataGridView_Visao.TabIndex = 1;
             this.dataGridView_Visao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);
-            this.dataGridView_Visao.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Visao_CellContentDoubleClick);
-            this.dataGridView_Visao.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Visao_CellDoubleClick);
             // 
             // dataGridView_Cartuchos
             // 
-            this.dataGridView_Cartuchos.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView_Cartuchos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_Cartuchos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView_Cartuchos.Location = new System.Drawing.Point(3, 16);
@@ -185,6 +195,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
                         | System.Windows.Forms.AnchorStyles.Left)
                         | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.dateTimePicker_Encerramento);
             this.groupBox2.Controls.Add(this.textBox_Telefone);
             this.groupBox2.Controls.Add(this.label_Encerrada);
@@ -282,6 +293,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "CADASTRO";
             // 
+            // dateTimePicker_Encerramento
+            // 
+            this.dateTimePicker_Encerramento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker_Encerramento.Location = new System.Drawing.Point(470, 527);
+            this.dateTimePicker_Encerramento.Name = "dateTimePicker_Encerramento";
+            this.dateTimePicker_Encerramento.Size = new System.Drawing.Size(94, 20);
+            this.dateTimePicker_Encerramento.TabIndex = 93;
+            this.dateTimePicker_Encerramento.Visible = false;
+            // 
             // textBox_Telefone
             // 
             this.textBox_Telefone.Location = new System.Drawing.Point(91, 148);
@@ -354,6 +374,7 @@
             // 
             // textBox_Nome
             // 
+            this.textBox_Nome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.textBox_Nome.Location = new System.Drawing.Point(91, 126);
             this.textBox_Nome.Name = "textBox_Nome";
             this.textBox_Nome.Size = new System.Drawing.Size(306, 20);
@@ -475,7 +496,7 @@
             this.button_Processar.Name = "button_Processar";
             this.button_Processar.Size = new System.Drawing.Size(100, 30);
             this.button_Processar.TabIndex = 69;
-            this.button_Processar.Text = "PROCESSAR";
+            this.button_Processar.Text = "SALVAR";
             this.button_Processar.UseVisualStyleBackColor = false;
             this.button_Processar.Click += new System.EventHandler(this.button_Processar_Click);
             // 
@@ -1174,10 +1195,10 @@
             // dateTimePicker_Data
             // 
             this.dateTimePicker_Data.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_Data.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Data.Location = new System.Drawing.Point(37, 26);
+            this.dateTimePicker_Data.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker_Data.Location = new System.Drawing.Point(32, 26);
             this.dateTimePicker_Data.Name = "dateTimePicker_Data";
-            this.dateTimePicker_Data.Size = new System.Drawing.Size(94, 20);
+            this.dateTimePicker_Data.Size = new System.Drawing.Size(99, 20);
             this.dateTimePicker_Data.TabIndex = 73;
             // 
             // groupBox3
@@ -1298,21 +1319,13 @@
             // 
             this.printDocument_Imprimir.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument_Imprimir_PrintPage);
             // 
-            // dateTimePicker_Encerramento
-            // 
-            this.dateTimePicker_Encerramento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker_Encerramento.Location = new System.Drawing.Point(470, 527);
-            this.dateTimePicker_Encerramento.Name = "dateTimePicker_Encerramento";
-            this.dateTimePicker_Encerramento.Size = new System.Drawing.Size(94, 20);
-            this.dateTimePicker_Encerramento.TabIndex = 93;
-            this.dateTimePicker_Encerramento.Visible = false;
-            // 
             // Form_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1016, 751);
             this.Controls.Add(this.button_AlterarCaminho);
             this.Controls.Add(this.textBox_Caminho);
