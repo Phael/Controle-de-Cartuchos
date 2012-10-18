@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Principal));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView_Visao = new System.Windows.Forms.DataGridView();
@@ -174,8 +175,11 @@
             this.dataGridView_Visao.Location = new System.Drawing.Point(3, 16);
             this.dataGridView_Visao.Name = "dataGridView_Visao";
             this.dataGridView_Visao.ReadOnly = true;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.dataGridView_Visao.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_Visao.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.White;
-            this.dataGridView_Visao.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView_Visao.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView_Visao.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Black;
             this.dataGridView_Visao.Size = new System.Drawing.Size(412, 661);
             this.dataGridView_Visao.TabIndex = 1;
             this.dataGridView_Visao.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_Cartuchos_Click);

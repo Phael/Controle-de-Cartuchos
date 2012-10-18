@@ -428,8 +428,6 @@ namespace Controle_de_Cartuchos
                 if (comboBox_Encerrada.Text == "Sim")
                 {
                     Encerramento = dateTimePicker_Encerramento.Value.ToShortDateString();
-                    Encerrada = "SIM";
-
                 }
 
                 else
@@ -476,6 +474,8 @@ namespace Controle_de_Cartuchos
                         
                     }
                 }
+
+                 //Else que controla a edicao
                 else
                 {
                     //Abre a Conexao com o Banco de Dados
@@ -519,6 +519,7 @@ namespace Controle_de_Cartuchos
 
         private void dataGridView_Cartuchos_Click(object sender, DataGridViewCellEventArgs e)
         {
+            //salva a posiçao da linha do data grid 
             LinhaAtual = int.Parse(e.RowIndex.ToString());
             int GridMax = dataGridView_Cartuchos.RowCount - 1;
 
@@ -611,10 +612,7 @@ namespace Controle_de_Cartuchos
                 button_Processar.Enabled = true;
 
                 button_Processar.Text = "EDITAR";
-                if (comboBox_Encerrada.Text == "SIM")
-                    comboBox_Encerrada.ForeColor = Color.Red;
-                else
-                    comboBox_Encerrada.ForeColor = Color.Black;
+                dateTimePicker_Encerramento.Visible = false;
 
             }
             
@@ -622,6 +620,7 @@ namespace Controle_de_Cartuchos
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+            string SqlCms="";
             string SqlCmd_Visao = "";
             OleDbConnection Conexao = new OleDbConnection("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + CaminhoBancoDados());
 
@@ -640,6 +639,7 @@ namespace Controle_de_Cartuchos
             if (textBox_Pesquisa.Text != "")
             {
                 SqlCmd_Visao = "SELECT OS,Nome,Data,Telefone FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
+                SqlCms = "SELECT * FROM Cartuchos WHERE Nome LIKE '" + textBox_Pesquisa.Text + "%'";
             }   
 
             if (Conexao.State == ConnectionState.Open)
@@ -647,6 +647,13 @@ namespace Controle_de_Cartuchos
                 if (textBox_Pesquisa.Text != null && textBox_Pesquisa.Text != "")
                 {
                     OleDbDataAdapter Historico_Visao = new OleDbDataAdapter(SqlCmd_Visao, Conexao);
+
+                    OleDbDataAdapter Historico = new OleDbDataAdapter(SqlCms, Conexao);
+
+                    Historico.Fill(Ds, "Cartuchos");
+
+                    dataGridView_Cartuchos.DataSource = Ds;
+                    dataGridView_Cartuchos.DataMember = "Cartuchos";
 
                     Historico_Visao.Fill(Ds_Visao, "Cartuchos_Visao");
 
@@ -852,7 +859,7 @@ namespace Controle_de_Cartuchos
 
         private void comboBox_Encerrada_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox_Encerrada.Text == "Sim")
+            if ((comboBox_Encerrada.Text != "Nao") && (comboBox_Encerrada.ForeColor != Color.Red))
                 dateTimePicker_Encerramento.Visible = true;
             else
                 dateTimePicker_Encerramento.Visible = false;
